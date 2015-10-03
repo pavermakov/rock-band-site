@@ -15,7 +15,6 @@
 <body>
 
     <div class="container">
-        
         <!-- HEADER IMAGE -->
         <div id="header-image">
             <img class="img-responsive" src="media/images/logo.jpg"/>
@@ -25,9 +24,9 @@
         <!-- NAVIGATION BAR -->
         <nav class="navbar navbar-inverse" role="navigation" ng-controller="NavCtrl">
             <ul class="nav nav-justified" id="navigation">
-                <li ><a href="#/">Home</a></li>
-                <li ><a href="#/members">Band Members</a></li>
-                <li ><a href="#/contacts">Contacts</a></li>
+                <li onclick="isActive(this,'#/members')" ><a href="#/">Home</a></li>
+                <li onclick="isActive(this,'#/members')" ><a href="#/members">Band Members</a></li>
+                <li onclick="isActive(this,'#/contacts')" ><a href="#/contacts">Contacts</a></li>
             </ul>
         </nav>
         

@@ -18,7 +18,9 @@ myApp.config(function($routeProvider){
 });
 
 myApp.controller('NavCtrl',['$scope','$location',function($scope,$location){
-    
+    isActive = function(tab,path){
+       return tab.firstChild.getAttribute('href') === path;
+   }
 }]);
 
 myApp.controller('HomeCtrl', ['$scope',function($scope){
