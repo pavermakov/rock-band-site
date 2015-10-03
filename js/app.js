@@ -37,19 +37,23 @@ myApp.controller('MembersCtrl', ['$scope',function($scope){
     $scope.members = [
         {
             name: 'Connor "Bobby Bubonic" Weber',
-            image: '../media/members/connor.jpg'
+            image: '../media/members/connor.jpg',
+            role: ''
         },
         {
             name: 'Jenna "The Common Cold" Bulgrin',
-            image: '../media/members/jenna.jpg'
+            image: '../media/members/jenna.jpg',
+            role: ''
         },
         {
             name: 'Mike "H1N1" Long',
-            image: '../media/members/mike.jpg'
+            image: '../media/members/mike.jpg',
+            role: ''
         },
         {
             name: 'Danny "Polio" Paparella',
-            image: '../media/members/danny.jpg'
+            image: '../media/members/danny.jpg',
+            role: ''
         }
     ];
 
