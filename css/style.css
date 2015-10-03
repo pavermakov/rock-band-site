@@ -1,0 +1,54 @@
+*{
+   box-sizing: border-box; 
+}
+body{
+    background: black;
+    color: white;
+}
+
+/* HEADER IMAGE */
+#header-image, #header-image > img{
+    margin: 0 auto;
+}
+
+.container{
+    max-width: 960px; 
+}
+
+/* NAVIGATION BAR DESIGN */
+.navbar-inverse{
+    border-radius: 0px;
+}
+#navigation > .active > a{
+    color: rgba(149, 45, 26, 1);
+}
+#navigation > li a{
+    padding:15px 0;
+    font-weight: bold;
+    color: white;
+ }
+/* Dont touch this! */
+.nav > li > a:focus, .nav > li > a:hover{
+    background-color: inherit;
+}
+
+#navigation > li > a:hover{
+    box-shadow: inset 0px -5px 0px 0px rgba(149, 45, 26, 0.86);
+    background: inherit;
+    -webkit-transition:box-shadow 0.3s;
+    transition:box-shadow 0.3s;
+}
+
+a:active{
+    background: color: rgba(149, 45, 26, 1);    
+}
+/* MAIN CONTENT DESIGN */
+
+/* GALLERY */
+
+/* FOOTER DESIGN */
+footer{
+    color: white;
+    margin-top: 10px;
+}
+

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bobby Bubonic and The Plague</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER IMAGE -->
+        <div id="header-image">
+            <img class="img-responsive" src="media/images/logo.jpg"/>
+        </div>
+        
+
+        <!-- NAVIGATION BAR -->
+        <nav class="navbar navbar-inverse" role="navigation" ng-controller="NavCtrl">
+            <ul class="nav nav-justified" id="navigation">
+                <li ><a href="#/">Home</a></li>
+                <li ><a href="#/members">Band Members</a></li>
+                <li ><a href="#/contacts">Contacts</a></li>
+            </ul>
+        </nav>
+        
+        <!-- MAIN CONTENT -->
+        <div id="main">
+            <div ng-view=""></div>
+        </div>
+        
+        
+        <!-- FOOTER -->
+        <footer>
+            <hr />
+            <p align="center">Bobby Bubonic and The Plague &copy; 2015</p>
+        </footer>
+    </div>
+
+</body>
+</html>
