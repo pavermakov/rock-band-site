@@ -38,7 +38,7 @@ myApp.controller('MembersCtrl', ['$scope',function($scope){
         {
             name: 'Connor "Bobby Bubonic" Weber',
             image: '../media/members/connor.jpg',
-            role: ''
+            role: 'Lead Guitar / Vocals'
         },
         {
             name: 'Jenna "The Common Cold" Bulgrin',
