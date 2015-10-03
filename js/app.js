@@ -43,17 +43,17 @@ myApp.controller('MembersCtrl', ['$scope',function($scope){
         {
             name: 'Jenna "The Common Cold" Bulgrin',
             image: '../media/members/jenna.jpg',
-            role: ''
+            role: 'Lead / Backing Vocals'
         },
         {
             name: 'Mike "H1N1" Long',
             image: '../media/members/mike.jpg',
-            role: ''
+            role: 'Bassist / Backing Vocals'
         },
         {
             name: 'Danny "Polio" Paparella',
             image: '../media/members/danny.jpg',
-            role: ''
+            role: 'Drums'
         }
     ];
 
