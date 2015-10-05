@@ -44,6 +44,30 @@ a:active{
 }
 /* MAIN CONTENT DESIGN */
 
+/* SOCIAL BUTTONS */
+.social img{
+    max-width: 50px;
+    display: inline;
+}
+#facebook{
+    color: #3b5998;
+}
+    #facebook:hover{
+        color: #6d84b4;
+    }
+#sound-cloud{
+    color: #f74916;
+}
+    #sound-cloud:hover{
+        color: #fd8b61;
+    }
+#reverbnation{
+    color: red;
+}
+    #reverbnation:hover{
+        color: #f85656;
+    }
+
 /* GALLERY */
 
 /* FOOTER DESIGN */

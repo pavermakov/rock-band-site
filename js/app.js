@@ -20,18 +20,13 @@ myApp.config(function($routeProvider){
 myApp.controller('NavCtrl',['$scope','$location',function($scope,$location){
     isActive = function(tab,path){
        return tab.firstChild.getAttribute('href') === path;
-   }
+    }
+
+
 }]);
 
 myApp.controller('HomeCtrl', ['$scope',function($scope){
-    // WELCOME DESCRIPTION
-    $scope.welcome = 'Welcome to the fan page of the punk rock band Bobby Bubonic and The Plague!'+
-        'The founding members, Connor, Danny, and Mike, started the band in 2013 in'+
-        'Akron, Ohio. The band was highly influeced by famous band such as Green Day, '+
-        'The Black Keys, Foo Fighters, and so on.'+
-        'In 2015 the band added Jenna. Bobby Bubonic and the Plague has been practicing' +
-        'and perfecting their original work for two years, now they will share it with '+
-        'the masses!';
+
 }]);
 
 myApp.controller('MembersCtrl', ['$scope',function($scope){
@@ -62,5 +57,15 @@ myApp.controller('MembersCtrl', ['$scope',function($scope){
 }]);
 
 myApp.controller('ContactsCtrl', function($scope){
+    // REPLACING TEXT WITH IMAGES for mobile devices
+    $('.container').ready(function(){
+        if($('#main').width() <= '325'){
+            $('#socialText').hide();
+            $('#socialImages').show();
+        } else {
+            $('#socialText').show();
+            $('#socialImages').hide();
+        }
+    });
     
 });
