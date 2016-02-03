@@ -1,4 +1,5 @@
 $main-font: Courier, monospace;
+$article-font: 'PT Mono', Courier, monospace;
 $nav-background: #222222;
 $light-font: #F6F6F6;
 
@@ -100,6 +101,8 @@ html {
 }
 
 #primary-navigation{
+	//- hidden by defauls
+	display: none;
 	background-color: $nav-background;
 	font-size: 2rem;
 	color: $light-font;
@@ -115,7 +118,52 @@ html {
 	}
 }
 
+#main-content{
+	background-color: #F2F2F2;
+	overflow: hidden;
+}
 
+article.post{
+	
+	margin: 0 15px 30px 15px;
 
+	.article-title{
+		display: inline-block;
+		margin-bottom: 5px;
+		font-size: 2.4rem;
+		font-weight: bold;
+	}
 
+	.article-date{
+		display: block;
+		margin:0;
+		font-size: 1.5rem;
+		color: #909090;
+	}
+
+	.article-content{
+		margin-top: 15px;
+		background-color: white;
+		border-top: 5px solid #E5E5E5;
+		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.05);
+
+		.article-text{
+			margin: 20px 15px 10px 15px;
+			display: inline-block;
+			font-family: $article-font;
+			font-size: 1.8rem;
+			line-height: 2.2rem;
+			text-align: left;
+		}
+	}
+	
+}
+
+#page-footer{
+	padding: 10px 0;
+	background-color: #222222;
+	color: white;
+	text-align: center;
+	font-size: 1.5rem;
+}
 
