@@ -23,6 +23,7 @@ gulp.task('watch',['browserSync','sass'],function(){
 	// compile .sass files on changes
 	gulp.watch('sass/*.scss',['sass'])
 	// reload page when .html, .css, or .js files change
-	gulp.watch('*.html',browserSync.reload);
-	gulp.watch('css/*.css',browserSync.reload);
+	gulp.watch('*.html', browserSync.reload);
+	gulp.watch('css/*.css', browserSync.reload);
+	gulp.watch('js/*.js', browserSync.reload);
 });

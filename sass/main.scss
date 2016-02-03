@@ -32,6 +32,13 @@ $light-font: #F6F6F6;
 	justify-content: $justify;
 }
 
+@mixin transition($property, $duration, $func){
+	-webkit-transition: $property $duration $func;
+	-moz-transition: $property $duration $func;
+	-o-transition: $property $duration $func;
+	transition: $property $duration $func;
+}
+
 body * {
 	box-sizing: border-box;
 	font-family: $main-font;
@@ -102,10 +109,13 @@ html {
 
 #primary-navigation{
 	//- hidden by defauls
-	display: none;
+	@include transition(max-height, 0.2s, ease-out);
+	max-height: 0px;
 	background-color: $nav-background;
 	font-size: 2rem;
 	color: $light-font;
+	overflow: hidden;
+	
 
 	ul{
 		margin:0;
@@ -143,20 +153,28 @@ article.post{
 
 	.article-content{
 		margin-top: 15px;
+		padding: 15px 15px 10px 15px;
 		background-color: white;
 		border-top: 5px solid #E5E5E5;
 		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.05);
 
+		figure{
+			margin: 0;
+
+			.article-image{
+				width: 100%;
+			}
+		}
+
 		.article-text{
-			margin: 20px 15px 10px 15px;
 			display: inline-block;
+			margin-bottom: 0;
 			font-family: $article-font;
 			font-size: 1.8rem;
 			line-height: 2.2rem;
 			text-align: left;
 		}
-	}
-	
+	}	
 }
 
 #page-footer{
@@ -167,3 +185,7 @@ article.post{
 	font-size: 1.5rem;
 }
 
+
+.nav-expanded{
+	max-height: 200px !important;
+}
