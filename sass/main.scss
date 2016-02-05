@@ -1,47 +1,6 @@
-$main-font: Courier, monospace;
-$article-font: 'PT Mono', Courier, monospace;
-$nav-background: #222222;
-$light-font: #F6F6F6;
-
-/////////////////////////////////////////
-///////// Mixins and other stuff ////////
-/////////////////////////////////////////
-
-@mixin flex-direction($direction){
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: $direction;
-	-ms-flex-direction: $direction;
-	flex-direction: $direction;
-}
-
-@mixin display-flex(){
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-}
-
-@mixin align-items($align){
-	-webkit-box-align: $align;
-	-webkit-align-items: $align;
-	-ms-flex-align: $align;
-	align-items: $align;
-}
-
-@mixin justify-content($justify){
-	-webkit-box-pack: $justify;
-	-webkit-justify-content: $justify;
-	-ms-flex-pack: $justify;
-	justify-content: $justify;
-}
-
-@mixin transition($property, $duration, $func){
-	-webkit-transition: $property $duration $func;
-	-moz-transition: $property $duration $func;
-	-o-transition: $property $duration $func;
-	transition: $property $duration $func;
-}
+//= partials/_mixins.scss
+//= partials/_variables.scss
+//= partials/_media.scss
 
 %clearfix {
   &:before, &:after {
