@@ -1,0 +1,51 @@
+article.post{
+	margin: 0 15px 30px 15px;
+	max-width: 800px;
+
+	.article-title{
+		display: inline-block;
+		margin-bottom: 5px;
+		font-size: 2.4rem;
+		font-weight: bold;
+	}
+
+	.article-date{
+		display: block;
+		margin:0;
+		font-size: 1.5rem;
+		color: #909090;
+	}
+
+	.article-content{
+		@extend %clearfix;
+		margin-top: 5px;
+		padding: 15px 0 10px 0;
+		background-color: white;
+		border-top: 5px solid #E5E5E5;
+		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.05);
+
+		figure{
+
+			margin: 0 15px 5px 15px;
+
+
+			@media only screen and (min-width:600px){
+				float: left;
+				max-width: 300px;
+			}
+
+			.article-image{
+				width: 100%;
+			}
+		}
+
+		.article-text{
+			margin: 0;
+			padding: 0 15px;
+			font-family: $article-font;
+			font-size: 1.8rem;
+			line-height: 2.2rem;
+			text-align: left;
+		}
+	}
+}

@@ -37,3 +37,18 @@
 	-o-transition: $property $duration $func;
 	transition: $property $duration $func;
 }
+
+%clearfix {
+  &:before, &:after {
+    content:" ";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+
+  & {
+    *zoom:1;
+  }
+}
