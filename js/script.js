@@ -4,6 +4,6 @@ $(function(){
 
 
 	function expandMenu(){
-		$('#primary-navigation').toggleClass('nav-expanded');
+		$('#drop-navigation').toggleClass('nav-expanded');
 	}
 });

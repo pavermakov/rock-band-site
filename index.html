@@ -4,8 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Bobby Bubonic and the Plague</title>
-	<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet'>
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!--<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet'>-->
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/normilize.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
@@ -16,37 +17,64 @@
 		<header id="page-header" role="banner">
 		</header>
 
-		<div id="page-controls">
+		<div id="page-contols-wrapper">
+			<div id="page-controls">
 
-			<div id="search-box">
-				<i class="fa fa-search"></i>
-			</div>
+				<div id="search-box">
+					<i class="fa fa-search"></i>
+				</div>
 
-			<div id="social-box">
+				<div id="inline-navigation">
+					<ul>
+						<li>NEWS</li>
+						<li>MUSIC</li>
+						<li>STORE</li>
+					</ul>
+				</div>
+
+				<div id="social-box">
+					<ul>
+						<li><i class="fa fa-facebook-square"></i></li>
+						<li><i class="fa fa-twitter"></i></li>
+						<li><i class="fa fa-soundcloud"></i></li>
+						<li><i class="fa fa-star"></i></li>
+					</ul>
+				</div>
+
+				<div id="nav-toggle-box">
+					<i class="fa fa-bars"></i>
+				</div>
+
+			</div><!-- end of #page-controls -->
+
+			<nav id="drop-navigation" role="navigation">
 				<ul>
-					<li><i class="fa fa-facebook"></i></li>
-					<li><i class="fa fa-twitter"></i></li>
-					<li><i class="fa fa-soundcloud"></i></li>
-					<li><i class="fa fa-star"></i></li>
+					<li>NEWS</li>
+					<li>MUSIC</li>
+					<li>STORE</li>
+					<li>ABOUT</li>
 				</ul>
-			</div>
+			</nav><!-- end of nav#primary-navigation-->
 
-			<div id="nav-toggle-box">
-				<i class="fa fa-bars"></i>
-			</div>
+		</div><!-- end of #page-contols-wrapper -->
 
-		</div><!-- end of #page-controls -->
 
-		<nav id="primary-navigation" role="navigation">
-			<ul>
-				<li>NEWS</li>
-				<li>MUSIC</li>
-				<li>STORE</li>
-				<li>ABOUT</li>
-			</ul>
-		</nav><!-- end of nav#primary-navigation-->
 
 		<main id="main-content" role="main">
+
+			<aside id="ads" class="side-bar">
+
+				<article class="side-content-wrapper">
+					<h4>Tickets are available</h4>
+					<figure>
+						<img src="img/performance3.jpg" alt="performance3">
+					</figure>
+					<p>
+						Tickets are in for our August 13 show, One Last Night in Paradise,
+						at The Empire. Only $5! Contact any Bobby Bubonic member to purchase!
+					</p>
+				</article>
+			</aside>
 
 			<section id="blog">
 
@@ -98,24 +126,25 @@
 
 				</article>
 
-				<article class="post">
-
-					<header>
-						<h3 class="article-title">Third time a charm</h3>
-						<h6 class="article-date">6 February 2016</h6>
-					</header>
-
-					<section class="article-content">
-
-						<p class="article-text">
-							Tickets are in for our August 13 show, One Last Night in Paradise,
-							at The Empire. Only $5! Contact any Bobby Bubonic member to purchase!
-						</p>
-					</section>
-
-				</article>
-
 			</section><!-- end of section#blog -->
+
+			<aside id="members" class="side-bar">
+
+				<article class="side-content-wrapper">
+					<h4>Meet the band</h4>
+					<figure><img src="img/members/band.jpg" alt="band"></figure>
+					<p>
+						The founding members, Connor, Danny, and Mike, started the band
+						in 2013. In 2015 the band added Jenna. Bobby Bubonic and the Plague
+						has been practicing and perfecting their original work for two years,
+						now they will share it with the masses!
+					</p>
+					<p>
+						We enjoy playing music. We enjoy pizza. We enjoy cats. We enjoy enjoyment.
+						We enjoy simplicity.
+					</p>
+			</article>
+			</aside>
 
 		</main><!-- end of main#main-content -->
 

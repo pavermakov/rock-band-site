@@ -1,12 +1,42 @@
-article.post .article-content:before, article.post .article-content:after {
+.side-bar .side-content-wrapper:before, article.post .article-content:before, .side-bar .side-content-wrapper:after, article.post .article-content:after {
   content: " ";
   display: table; }
 
-article.post .article-content:after {
+.side-bar .side-content-wrapper:after, article.post .article-content:after {
   clear: both; }
 
-article.post .article-content {
+.side-bar .side-content-wrapper, article.post .article-content {
   *zoom: 1; }
+
+#main-content #ads {
+  width: 18%;
+  float: left;
+  margin-left: 1%; }
+
+#main-content #blog {
+  width: 50%;
+  float: left;
+  margin-left: 1%; }
+
+#main-content #members {
+  width: 28%;
+  float: left;
+  margin-left: 1%; }
+
+@media only screen and (max-width: 1000px) {
+  #main-content #ads {
+    width: 24%; }
+  #main-content #blog {
+    width: 74%; }
+  #main-content #members {
+    display: none; } }
+
+@media only screen and (max-width: 790px) {
+  #main-content #ads {
+    width: 100%;
+    margin-left: 0; }
+  #main-content #blog {
+    width: 100%; } }
 
 #page-header {
   width: 100%;
@@ -15,11 +45,33 @@ article.post .article-content {
   background: url("../img/logo.jpg") center no-repeat black;
   background-size: auto 100%; }
 
-#page-controls {
+#page-contols-wrapper {
   width: 100%;
-  height: 50px;
-  color: #F6F6F6;
   background-color: #222222; }
+
+#page-controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 790px;
+  margin: 0 auto;
+  height: 50px;
+  color: #F6F6F6; }
 
 #search-box,
 #nav-toggle-box {
@@ -45,14 +97,29 @@ article.post .article-content {
   font-size: 2.7rem;
   float: left; }
 
+#search-box {
+  border-right: 1px solid #373737; }
+  @media only screen and (min-width: 790px) {
+    #search-box {
+      font-size: 2rem;
+      width: 70px; } }
+
+#nav-toggle-box {
+  border-left: 1px solid #373737; }
+  @media only screen and (min-width: 790px) {
+    #nav-toggle-box {
+      display: none; } }
+
 #social-box {
   width: 60%;
   height: 100%;
   float: left;
   padding: 0;
-  font-size: 2rem;
-  border-left: 1px solid #373737;
-  border-right: 1px solid #373737; }
+  font-size: 2rem; }
+  @media only screen and (min-width: 790px) {
+    #social-box {
+      width: 240px;
+      border-left: 1px solid #373737; } }
   #social-box ul {
     display: -webkit-box;
     display: -webkit-flex;
@@ -78,7 +145,40 @@ article.post .article-content {
     #social-box ul li {
       margin: 0 7%; }
 
-#primary-navigation {
+#inline-navigation {
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  letter-spacing: 0.3rem; }
+  @media only screen and (max-width: 789px) {
+    #inline-navigation {
+      display: none; } }
+  #inline-navigation ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    #inline-navigation ul li {
+      margin: 0 7%; }
+
+#drop-navigation {
   -webkit-transition: max-height 0.2s ease-out;
   -moz-transition: max-height 0.2s ease-out;
   -o-transition: max-height 0.2s ease-out;
@@ -88,16 +188,53 @@ article.post .article-content {
   font-size: 2rem;
   color: #F6F6F6;
   overflow: hidden; }
-  #primary-navigation ul {
+  @media only screen and (min-width: 790px) {
+    #drop-navigation {
+      display: none; } }
+  #drop-navigation ul {
     margin: 0;
     padding: 0; }
-    #primary-navigation ul li {
+    #drop-navigation ul li {
       padding: 12px 10px;
       border-top: 1px solid #373737; }
 
+.side-bar {
+  margin-top: 25px; }
+  @media only screen and (max-width: 790px) {
+    .side-bar {
+      margin: 0 15px 30px 15px; } }
+  .side-bar h4 {
+    font-size: 2rem;
+    margin: 0 0 10px 0; }
+    @media only screen and (max-width: 790px) {
+      .side-bar h4 {
+        font-size: 2.4rem; } }
+  .side-bar .side-content-wrapper {
+    padding: 15px;
+    background-color: white;
+    border-top: 5px solid #E5E5E5;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.05); }
+    .side-bar .side-content-wrapper figure {
+      margin: 0; }
+      @media only screen and (max-width: 790px) {
+        .side-bar .side-content-wrapper figure {
+          float: left;
+          width: 40%;
+          margin: 0 15px 5px 0; } }
+      .side-bar .side-content-wrapper figure img {
+        width: 100%; }
+    .side-bar .side-content-wrapper p {
+      font-family: "Raleway", sans-serif;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+      word-spacing: 0.5rem; }
+      @media only screen and (max-width: 790px) {
+        .side-bar .side-content-wrapper p {
+          font-size: 1.9rem;
+          line-height: 2.7rem; } }
+
 article.post {
-  margin: 0 15px 30px 15px;
-  max-width: 800px; }
+  margin: 0 15px 30px 15px; }
   article.post .article-title {
     display: inline-block;
     margin-bottom: 5px;
@@ -119,15 +256,16 @@ article.post {
       @media only screen and (min-width: 600px) {
         article.post .article-content figure {
           float: left;
-          max-width: 300px; } }
+          width: 40%; } }
       article.post .article-content figure .article-image {
         width: 100%; }
     article.post .article-content .article-text {
       margin: 0;
       padding: 0 15px;
-      font-family: "PT Mono", Courier, monospace;
-      font-size: 1.8rem;
-      line-height: 2.2rem;
+      font-family: "Raleway", sans-serif;
+      font-size: 1.9rem;
+      line-height: 2.7rem;
+      word-spacing: 0.5rem;
       text-align: left; }
 
 #page-footer {
