@@ -57,6 +57,30 @@
 		border-left: 1px solid #373737;
 	}
 
+	a {
+		color: $light-font;
+
+		.fa-facebook-square:hover{
+			color: #3765A3;
+		}
+
+		.fa-twitter:hover{
+			color: #5EA9DD;
+		}
+
+		.fa-soundcloud:hover{
+			color: #F97C10;
+		}
+
+		.fa-star:hover{
+			color: #E43526;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
 	ul {
 		@include display-flex();
 		@include flex-direction(row);

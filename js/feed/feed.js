@@ -15,7 +15,7 @@ var Feed = (function(){
   }
 
   function _addEventListeners(){
-    $('.more').click(_loadMorePosts);
+    $('#blog').on('click', '.more',_loadMorePosts);
   }
 
 
@@ -36,8 +36,8 @@ var Feed = (function(){
       if (response && !response.error) {
         _FeedResponse.data = _FeedResponse.data.concat(response.data);
         _FeedResponse.paging = response.paging;
-        _displayFeed(_FeedResponse.data);
         console.log(_FeedResponse);
+        _displayFeed(_FeedResponse.data);
       } else {
         console.log('Error: ', response.error);
       }
@@ -45,11 +45,19 @@ var Feed = (function(){
   }
 
   /* transparency templating engine */
-  /* DO NOT TOUCH THIS */
   function _displayFeed(posts){
 
     var directives = {
 
+      type: {
+        text: function(){
+          if(this.type === "event"){
+            return this.caption;
+          } else if(this.type === "link"){
+
+          }
+        }
+      },
       created_time: {
         datetime: function(){
           return this.created_time;
@@ -71,14 +79,23 @@ var Feed = (function(){
     };
 
     /* Render our template */
-    $('.feed').render(posts, directives);
+    $('#blog').render(posts, directives);
     /* Since some post may not have media attached, remove the empty element */
-    $('.full_picture:not(.full_picture[src*="https"])').remove();
+    removeEmptyImg();
     /* relative timeline */
-    $("time.timeago").timeago();
-
+    $(".timeago").timeago();
+    /* hide the loading animation */
     _preloadAnimation('off');
+     _appendButton();
   } // end of _displayFeed
+
+  function removeEmptyImg(){
+    $('.full_picture:not(.full_picture[src*="https"])').closest('figure').remove();
+  }
+
+  function _appendButton(){
+    $('#blog').append('<div class="more">Load More Posts</div>');
+  }
 
   function _loadMorePosts(){
     _requestFeed(_FeedResponse.paging.next);

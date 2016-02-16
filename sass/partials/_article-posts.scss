@@ -1,4 +1,4 @@
-//- Designing article posts
+/* Designing article posts */
 
 article.post{
 	margin: 0 15px 30px 15px;
@@ -6,7 +6,7 @@ article.post{
 	.article-title{
 		display: inline-block;
 		margin-bottom: 5px;
-		font-size: $mobile-header-size;
+		font-size: $article-header-size;
 		font-weight: bold;
 	}
 
@@ -18,16 +18,15 @@ article.post{
 	}
 
 	.article-content{
-		@extend %clearfix;
 		margin-top: 5px;
-		padding: 15px 0 10px 0;
+		padding: 15px;
 		background-color: white;
 		border-top: 5px solid #E5E5E5;
 		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.05);
 
 		figure{
 
-			margin: 0 15px 5px 15px;
+			margin: 0 15px 15px 0;
 
 
 			@media only screen and (min-width:600px){
@@ -44,10 +43,15 @@ article.post{
 			margin: 0;
 			padding: 0 15px;
 			font-family: $article-font;
-			font-size: $mobile-font-size;
+			font-size: $article-text-size;
 			line-height: $mobile-line-height;
 			word-spacing: 0.5rem;
 			text-align: left;
+		}
+
+		hr{
+			margin: 5px 0 0 0;
+			opacity: 0.2;
 		}
 	}
 }

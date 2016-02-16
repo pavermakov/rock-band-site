@@ -4,11 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Bobby Bubonic and the Plague</title>
-	<!--<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet'>-->
-	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!--<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>-->
+	<link href='https://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/normilize.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<script src="http://connect.facebook.net/en_US/all.js"></script>
 </head>
 <body>
 	<script src="js/feed/get_fb.js"></script><!-- Must go right after the <body> -->
@@ -35,10 +36,26 @@
 
 				<div id="social-box">
 					<ul>
-						<li><i class="fa fa-facebook-square"></i></li>
-						<li><i class="fa fa-twitter"></i></li>
-						<li><i class="fa fa-soundcloud"></i></li>
-						<li><i class="fa fa-star"></i></li>
+						<li>
+							<a href="https://www.facebook.com/bobbybubonicandplague" target="_blank">
+								<i class="fa fa-facebook-square"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/andtheplague" target="_blank">
+								<i class="fa fa-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://soundcloud.com/bobbybubonic" target="_blank">
+								<i class="fa fa-soundcloud"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.reverbnation.com/bobbybubonicandtheplague" target="_blank">
+								<i class="fa fa-star"></i>
+							</a>
+						</li>
 					</ul>
 				</div>
 
@@ -74,60 +91,38 @@
 						Tickets are in for our August 13 show, One Last Night in Paradise,
 						at The Empire. Only $5! Contact any Bobby Bubonic member to purchase!
 					</p>
+
 				</article>
+
 			</aside>
 
 			<section id="blog">
 
-				<article class="post">
+				<article class="post" data-link>
 
 					<header>
-						<h3 class="article-title">We are performing</h3>
-						<h6 class="article-date">3 February 2016</h6>
+						<h3 class="article-title type"></h3>
+						<time class="timeago created_time article-date"></time>
 					</header>
 
 					<section class="article-content">
 
 						<figure>
-							<img class="article-image" src="img/performance.jpg" alt="performance">
+							<img class="full_picture article-image">
 						</figure>
 
-						<p class="article-text">
-							Are you ready for some live local music? On February 12th,
-							we'll be playing at Chucks with 6 other bands. Bound to be
-							a crazy night. As you all should know, we'll be releasing
-							our first album on February 26th at The Empire. The Chucks
-							show has a $5 cover at the door. The Empire show will be $5
-							pre-sale (your favorite band member will have tickets) and
-							$7 at the door. Check out the posters and most importantly,
-							SUPPORT YOUR LOCAL MUSIC SCENE!
-						</p>
+						<p class="message article-text"></p>
+
+						<hr class="clearfix">
+						<a class="toFBbtn" target="_blank" href="#">View on Facebook</a>
 					</section>
 
 				</article>
 
-				<article class="post">
 
-					<header>
-						<h3 class="article-title">I wanna rock!</h3>
-						<h6 class="article-date">4 February 2016</h6>
-					</header>
-
-					<section class="article-content">
-
-						<figure>
-							<img class="article-image" src="img/performance2.jpg" alt="performance2">
-						</figure>
-
-						<p class="article-text">
-							Here we go again! Saturday, September 5th we are playing at
-							George's in Canton at 9! See you there!
-						</p>
-					</section>
-
-				</article>
 
 			</section><!-- end of section#blog -->
+
 
 			<aside id="members" class="side-bar">
 
@@ -154,6 +149,7 @@
 		</footer>
 
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/transparency/dist/transparency.min.js"></script>
 		<script src="bower_components/jquery-timeago/jquery.timeago.js"></script>
 		<script src="js/feed/feed.js"></script>
 		<script src="js/script.js"></script>
