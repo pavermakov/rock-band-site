@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Bobby Bubonic and the Plague</title>
-	<!--<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>-->
 	<link href='https://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/normilize.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -12,7 +11,7 @@
 	<script src="http://connect.facebook.net/en_US/all.js"></script>
 </head>
 <body>
-	<script src="js/feed/get_fb.js"></script><!-- Must go right after the <body> -->
+
 
 	<div id="container">
 
@@ -28,8 +27,8 @@
 
 				<div id="inline-navigation">
 					<ul>
-						<li>NEWS</li>
-						<li>MUSIC</li>
+						<li><a class="active-link" href="index.html">NEWS</a></li>
+						<li><a href="music.html">MUSIC</a></li>
 						<li>STORE</li>
 					</ul>
 				</div>
@@ -67,8 +66,8 @@
 
 			<nav id="drop-navigation" role="navigation">
 				<ul>
-					<li>NEWS</li>
-					<li>MUSIC</li>
+					<li><a class="active-link" href="index.html">NEWS</a></li>
+					<li><a href="music.html">MUSIC</a></li>
 					<li>STORE</li>
 					<li>ABOUT</li>
 				</ul>
@@ -94,35 +93,41 @@
 
 				</article>
 
-			</aside>
-
-			<section id="blog">
-
-				<article class="post" data-link>
-
-					<header>
-						<h3 class="article-title type"></h3>
-						<time class="timeago created_time article-date"></time>
-					</header>
-
-					<section class="article-content">
-
-						<figure>
-							<img class="full_picture article-image">
-						</figure>
-
-						<p class="message article-text"></p>
-
-						<hr class="clearfix">
-						<a class="toFBbtn" target="_blank" href="#">View on Facebook</a>
-					</section>
-
-				</article>
+			</aside><!-- end of aside#ads -->
 
 
+				<section id="blog">
 
-			</section><!-- end of section#blog -->
+					<section id="blog-wrapper">
 
+						<article class="post" data-link>
+
+							<header>
+								<h3 class="article-title type"></h3>
+								<time class="timeago created_time article-date"></time>
+							</header>
+
+							<section class="article-content">
+
+								<figure>
+									<img class="full_picture article-image">
+								</figure>
+
+								<p class="message article-text"></p>
+
+								<hr class="clearfix">
+								<a class="toFBbtn" target="_blank" href="#">View on Facebook</a>
+							</section>
+
+						</article>
+
+					</section><!-- end of section#blog-wrapper -->
+
+					<div class="more">
+						Load More Posts
+					</div>
+
+				</section><!-- end of section#blog -->
 
 			<aside id="members" class="side-bar">
 
@@ -148,6 +153,7 @@
 			BOBBY BUBONIC &copy; THE PLAGUE 2016 <br> ALL RIGHTS RESERVED
 		</footer>
 
+		<script src="js/feed/get_fb.js"></script>
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/transparency/dist/transparency.min.js"></script>
 		<script src="bower_components/jquery-timeago/jquery.timeago.js"></script>

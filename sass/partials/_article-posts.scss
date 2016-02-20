@@ -14,7 +14,7 @@ article.post{
 		display: block;
 		margin:0;
 		font-size: 1.5rem;
-		color: #909090;
+		color: $date-color;
 	}
 
 	.article-content{
@@ -22,7 +22,7 @@ article.post{
 		padding: 15px;
 		background-color: white;
 		border-top: 5px solid #E5E5E5;
-		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.05);
+		box-shadow: $section-box-shadow;
 
 		figure{
 

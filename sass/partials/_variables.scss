@@ -1,21 +1,23 @@
 //- Global Variables
 
 $main-font: Courier, monospace;
+$date-color: #909090;
+$section-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.05);
+
 
 $article-font: 'Telex', sans-serif;
-
 $article-header-size: 3rem;
-
 $article-text-size: 2rem;
+
+
 
 $side-font-size: 3rem;
 
+
 $mobile-font-size: 2.3rem;
-
 $mobile-line-height: 3.5rem;
-
 $mobile-header-size: 2.4rem;
 
-$nav-background: #222222;
 
-$light-font: #F6F6F6;
+$nav-background: #222222;
+$nav-font-color: rgba(246, 246, 246, 0.6);

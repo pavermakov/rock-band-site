@@ -53,8 +53,8 @@ var Feed = (function(){
         text: function(){
           if(this.type === "event"){
             return this.caption;
-          } else if(this.type === "link"){
-
+          } else if(this.type === "video"){
+            return "Video Update"
           }
         }
       },
@@ -79,35 +79,31 @@ var Feed = (function(){
     };
 
     /* Render our template */
-    $('#blog').render(posts, directives);
+    $('#blog-wrapper').render(posts, directives);
     /* Since some post may not have media attached, remove the empty element */
     removeEmptyImg();
     /* relative timeline */
     $(".timeago").timeago();
     /* hide the loading animation */
     _preloadAnimation('off');
-     _appendButton();
   } // end of _displayFeed
 
   function removeEmptyImg(){
     $('.full_picture:not(.full_picture[src*="https"])').closest('figure').remove();
   }
 
-  function _appendButton(){
-    $('#blog').append('<div class="more">Load More Posts</div>');
-  }
-
   function _loadMorePosts(){
     _requestFeed(_FeedResponse.paging.next);
     _preloadAnimation('on');
+
     return false;
   }
 
   function _preloadAnimation(state){
     if(state === "on"){
-      $('#loading').show();
+      $('.more').html('Loading ...');
     } else if(state === "off"){
-      $('#loading').hide();
+      $('.more').html('Load More Posts');
     }
   }
 
