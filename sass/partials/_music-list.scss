@@ -1,0 +1,18 @@
+section#song-list{
+  margin: 0 15px 30px 15px;
+
+  .article-title{
+    margin-left: 15px;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: $article-header-size;
+    font-weight: bold;
+  }
+
+  article.song{
+    margin: 25px 15px 30px 15px;
+    background-color: white;
+    border-top: 5px solid #E5E5E5;
+    box-shadow: $section-box-shadow;
+  }
+}

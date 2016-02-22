@@ -15,7 +15,7 @@ var Feed = (function(){
   }
 
   function _addEventListeners(){
-    $('#blog').on('click', '.more',_loadMorePosts);
+    $('#blog').on('click', '.more', _loadMorePosts);
   }
 
 

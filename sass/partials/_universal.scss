@@ -1,0 +1,25 @@
+body * {
+	box-sizing: border-box;
+	font-family: $main-font;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+#container {
+	width: 100%;
+}
+
+#main-content{
+	background-color: #F2F2F2;
+	overflow: hidden;
+}
+
+.nav-expanded{
+	max-height: 200px !important;
+}
+
+.clearfix{
+	clear: both;
+}

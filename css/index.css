@@ -1,4 +1,24 @@
 /* Mixins */
+body * {
+  box-sizing: border-box;
+  font-family: Courier, monospace; }
+
+html {
+  font-size: 62.5%; }
+
+#container {
+  width: 100%; }
+
+#main-content {
+  background-color: #F2F2F2;
+  overflow: hidden; }
+
+.nav-expanded {
+  max-height: 200px !important; }
+
+.clearfix {
+  clear: both; }
+
 #main-content #ads {
   width: 18%;
   float: left;
@@ -361,23 +381,3 @@ article.post {
     cursor: pointer;
     background-color: #E5E5E5;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.05); }
-
-body * {
-  box-sizing: border-box;
-  font-family: Courier, monospace; }
-
-html {
-  font-size: 62.5%; }
-
-#container {
-  width: 100%; }
-
-#main-content {
-  background-color: #F2F2F2;
-  overflow: hidden; }
-
-.nav-expanded {
-  max-height: 200px !important; }
-
-.clearfix {
-  clear: both; }

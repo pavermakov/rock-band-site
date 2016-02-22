@@ -1,0 +1,39 @@
+#main-content{
+
+  #ads{
+    width: 18%;
+    float: left;
+    margin-left:1%;
+  }
+
+  #song-list{
+    width: 70%;
+    float:left;
+    margin-left:1%;
+  }
+}
+
+@media only screen and (max-width:1000px){
+  #main-content{
+
+    #ads{
+      width: 24%;
+    }
+
+  }
+}
+
+@media only screen and (max-width:790px){
+  #main-content{
+    #ads{
+      width: 100%;
+      margin-left: 0;
+    }
+
+    #song-list{
+      width: 100%;
+      margin-left:0;
+    }
+
+  }
+}

@@ -5,7 +5,7 @@ var browserSync = require('browser-sync');
 
 // compile .scss files
 gulp.task('sass',function(){
-	return gulp.src('sass/main.scss')
+	return gulp.src('sass/*.scss')
 		.pipe(rigger())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('css'))
@@ -18,14 +18,6 @@ gulp.task('browserSync',function(){
 			baseDir:"."
 		}
 	})
-});
-
-gulp.task('simple', function(){
-	return gulp.src('sass/main.scss')
-		.pipe(sassGlob())
-		.pipe(sass())
-
-		.pipe(gulp.dest('sass/exp.scss'))
 });
 
 // watch file changes
