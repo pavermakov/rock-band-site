@@ -30,8 +30,8 @@ html {
 .full-width {
   width: 100% !important; }
 
-.active-link, #store-header ul li:hover a {
-  color: #f6f6f6; }
+.active-link, #store-header ul.full-nav li:hover a {
+  color: #f6f6f6 !important; }
 
 @media only screen and (min-width: 740px) {
   .animsition-loading {
@@ -41,13 +41,14 @@ html {
   height: 98px;
   background-color: black;
   color: rgba(246, 246, 246, 0.6);
-  display: flex; }
+  display: flex;
+  padding-left: 2%; }
   #store-header .logo-holder {
     margin: 0;
     width: 225px; }
     #store-header .logo-holder img {
       width: 100%; }
-  #store-header ul {
+  #store-header ul.full-nav {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
@@ -58,19 +59,32 @@ html {
     height: 98px;
     font-size: 3rem;
     font-weight: bold; }
-    #store-header ul li {
+    #store-header ul.full-nav li {
       margin-right: 5%;
       letter-spacing: 0.3rem; }
-      #store-header ul li:hover a {
+      #store-header ul.full-nav li:hover a {
         cursor: pointer;
         color: #f6f6f6; }
-      #store-header ul li a {
+      #store-header ul.full-nav li a {
         color: rgba(246, 246, 246, 0.6); }
-        #store-header ul li a:link, #store-header ul li a:visited {
+        #store-header ul.full-nav li a:link, #store-header ul.full-nav li a:visited {
           text-decoration: none; }
+  #store-header #nav-toggle-box {
+    display: none;
+    font-size: 4.5rem;
+    margin-right: 3%; }
+
+@media only screen and (max-width: 790px) {
+  .full-nav {
+    display: none !important; }
+  #nav-toggle-box {
+    display: flex !important;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end; } }
 
 #main-content #info-panel {
-  min-width: 200px;
+  width: 200px;
   float: left;
   margin-left: 3%; }
 
@@ -124,13 +138,19 @@ html {
       word-spacing: 0.5rem; }
       @media only screen and (max-width: 790px) {
         .side-bar .side-content-wrapper p {
-          font-size: 1.8rem;
-          line-height: 3.5rem; } }
+          font-size: 1.8rem; } }
 
 #info-panel {
-  font-size: 1.8rem; }
+  font-size: 1.8rem;
+  color: #5b5b5b; }
   #info-panel .store-controls {
     padding-left: 12%; }
+    #info-panel .store-controls p {
+      display: inline;
+      transition: all 0.2s ease-in; }
+      #info-panel .store-controls p:hover {
+        cursor: pointer;
+        color: #2d2d2d; }
     #info-panel .store-controls .fa-user {
       position: relative;
       left: 2px;
@@ -144,8 +164,28 @@ html {
     margin-top: 25px; }
 
 @media only screen and (max-width: 1170px) {
-  .store-controls {
-    padding-left: 15px; } }
+  #info-panel {
+    margin-bottom: 25px;
+    width: 100%; }
+    #info-panel .store-controls {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-left: 15px;
+      height: 50px;
+      width: 50%;
+      float: left; }
+      #info-panel .store-controls div:last-child {
+        padding-left: 25px; }
+    #info-panel .social-links {
+      width: 50%;
+      float: left;
+      margin-top: 0;
+      height: 50px; } }
+
+@media only screen and (max-width: 790px) {
+  #info-panel {
+    margin-top: 25px; } }
 
 #product-list {
   margin-top: 5px;
@@ -166,29 +206,35 @@ html {
     max-width: 33%; }
     #product-list .product-item figure {
       margin: 0;
-      border: 3px solid #E5E5E5; }
+      border: 3px solid #efefef; }
       #product-list .product-item figure img {
         width: 100%;
-        border-bottom: 3px solid #E5E5E5; }
+        border-bottom: 3px solid #efefef; }
       #product-list .product-item figure figcaption {
         padding-top: 5px;
         font-weight: bold;
-        margin: 0 5px 5px 5px; }
+        margin: 0 7px 7px 7px;
+        font-family: "Hind", sans-serif; }
       #product-list .product-item figure .product-name {
         font-size: 2rem;
-        text-align: center; }
+        text-align: center;
+        margin-bottom: 0; }
       #product-list .product-item figure .product-price {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
         position: relative;
-        top: 5px; }
+        top: 2px;
+        font-family: "Hind", sans-serif; }
       #product-list .product-item figure .order-button {
         font-size: 1.8rem;
         float: right;
         color: #5b5b5b;
-        background-color: #E5E5E5;
+        background-color: #efefef;
         border: 2px solid #b7b7b7;
-        padding: 5px;
-        transition: all 0.2s ease-in; }
+        padding: 1px 10px;
+        transition: all 0.1s ease-in;
+        border-radius: 2px;
+        font-family: "Hind", sans-serif;
+        letter-spacing: 1px; }
         #product-list .product-item figure .order-button:hover {
           cursor: pointer;
           color: #2d2d2d;

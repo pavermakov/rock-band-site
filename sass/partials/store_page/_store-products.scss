@@ -12,47 +12,52 @@
 		flex-grow: 1;
 		flex-shrink: -1;
 		max-width: 33%;
-
-		// outline: 1px solid red;
+		
 
 		figure {
 			margin: 0;
-			border: 3px solid #E5E5E5;
+			border: 3px solid $light-gray;
 
 			img {
 				width: 100%;
-				border-bottom: 3px solid #E5E5E5;
+				border-bottom: 3px solid $light-gray;
 			}
 
 			figcaption {
 				padding-top: 5px;
 				font-weight: bold;
-				margin: 0 5px 5px 5px;
+				margin: 0 7px 7px 7px;
+				font-family: $article-font;
 			}
 
 			.product-name {
 				font-size: 2rem;
 				text-align: center;
+				margin-bottom: 0;
 			}
 
 			.product-price {
-				font-size: 1.8rem;
+				font-size: 2.2rem;
 				position: relative;
-				top: 5px;
+				top: 2px;
+				font-family: $article-font;
 			}
 
 			.order-button {
 				font-size: 1.8rem;
 				float: right;
-				color: #5b5b5b;
-				background-color: #E5E5E5;
+				color: $middle-gray;
+				background-color: $light-gray;
 				border: 2px solid #b7b7b7;
-				padding: 5px;
-				transition: all 0.2s ease-in;
+				padding: 1px 10px;
+				transition: all 0.1s ease-in;
+				border-radius: 2px;
+				font-family: $article-font;
+				letter-spacing: 1px;
 
 				&:hover {
 					cursor: pointer;
-					color: #2d2d2d;
+					color: $dark-gray;
 					border-color: #5b5b5b;
 				}
 			}

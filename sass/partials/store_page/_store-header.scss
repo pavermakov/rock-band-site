@@ -6,9 +6,12 @@ $header-font-size: 3rem;
 	background-color: black;
 	color: $nav-font-color;
 	display: flex;
+	padding-left: 2%;
+	
 
 	.logo-holder {
 		margin: 0;
+
 		width: 225px;
 
 		img {
@@ -16,7 +19,7 @@ $header-font-size: 3rem;
 		}
 	}
 
-	ul {
+	ul.full-nav {
 		flex-grow: 1;
 		display: flex;
 		justify-content: flex-end;
@@ -44,5 +47,24 @@ $header-font-size: 3rem;
 			}
 
 		}
+	}
+
+	#nav-toggle-box {
+		display: none;
+		font-size: 4.5rem;
+		margin-right: 3%;
+	}
+}
+
+@media only screen and (max-width:790px){
+	.full-nav {
+		display: none !important;
+	}
+
+	#nav-toggle-box {
+		display: flex !important;
+		flex-grow: 1;
+		align-items: center;
+		justify-content: flex-end;
 	}
 }

@@ -23,19 +23,24 @@
 				<img src="./img/logo.jpg" alt="Logo">
 			</figure>
 
-			<ul>
+			<ul class="full-nav">
 				<li><a href="./index.html">NEWS</a></li>
-				<li>MUSIC</li>
-				<li>ABOUT</li>
+				<li><a href="music.html">MUSIC</a></li>
+				<li><a href="about.html">ABOUT</a></li>
 			</ul>
-		</header>
+
+			<div id="nav-toggle-box">
+				<i class="fa fa-bars"></i>
+			</div>
+
+		</header>		
 
 		<main id="main-content" role="main">
 
 			<aside id="info-panel" class="side-bar">
 				<div class="store-controls side-content-wrapper">
-					<div><i class="fa fa-user"></i>My Account</div>
-					<div><i class="fa fa-shopping-cart"></i>My Cart</div>
+					<div><p><i class="fa fa-user"></i>My Account</p></div>
+					<div><p><i class="fa fa-shopping-cart"></i>My Cart</p></div>
 				</div>
 
 				<div class="social-links side-content-wrapper">
@@ -76,7 +81,9 @@
 			BOBBY BUBONIC &copy; THE PLAGUE 2016 <br> ALL RIGHTS RESERVED
 		</footer>
 
+
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		
 	</div><!-- end of #container -->
 
 </body>

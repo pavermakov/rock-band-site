@@ -1,8 +1,19 @@
 #info-panel {
 	font-size: $side-font-size;
+	color: $middle-gray;
 
 	.store-controls {
 		padding-left: 12%;
+
+		p {
+			display: inline;
+			transition: all 0.2s ease-in;
+
+			&:hover {
+				cursor: pointer;
+				color: $dark-gray;
+			}
+		}
 
 		.fa-user {
 			position: relative;
@@ -28,25 +39,39 @@
 
 @media only screen and (max-width:1170px){
 
-	// #info-panel {
-	// 	margin-bottom: 25px;
+	#info-panel {
+		margin-bottom: 25px;
+		width: 100%;
+		
 
-	// 	.store-controls {
-	// 		display: flex;
-	// 		width: 30%;
-	// 		float: left;
-	// 		padding-left: 15px;
-	// 	}
+		.store-controls {
+			display: flex;
+			flex-direction: row;
+			justify-content:flex-start;
+			padding-left: 15px;
+			height: 50px;
+			width: 50%;
+			float: left;
 
-	// 	.social-links {
-	// 		margin-top: 0;
-	// 		width: 70%;
-	// 		float: left;
-	// 	}
-	// }
+			div:last-child{
+				padding-left: 25px;
+			}
+		}
 
-	.store-controls {
-		padding-left: 15px;
+		.social-links {
+			width: 50%;
+			float: left;
+			margin-top: 0;
+			height: 50px;
+		}
+
 	}
 	
+}
+
+@media only screen and (max-width:790px){
+	// overiding the _side-bars.scss rule
+	#info-panel {
+		margin-top: 25px;
+	}
 }

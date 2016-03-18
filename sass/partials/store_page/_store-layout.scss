@@ -1,7 +1,7 @@
 #main-content {
 
 	#info-panel {
-		min-width: 200px;
+		width: 200px;
 		float: left;
 		margin-left: 3%;
 	}
@@ -15,7 +15,7 @@
 
 @media only screen and (max-width:1170px){
 	#main-content {
-
+		
 		#info-panel {
 			width: 95%;
 			float: none;

@@ -31,7 +31,7 @@ html {
   width: 100% !important; }
 
 .active-link {
-  color: #f6f6f6; }
+  color: #f6f6f6 !important; }
 
 @media only screen and (min-width: 740px) {
   .animsition-loading {
@@ -315,8 +315,7 @@ section#song-list {
       word-spacing: 0.5rem; }
       @media only screen and (max-width: 790px) {
         .side-bar .side-content-wrapper p {
-          font-size: 1.8rem;
-          line-height: 3.5rem; } }
+          font-size: 1.8rem; } }
 
 #page-footer {
   padding: 10px 0;
