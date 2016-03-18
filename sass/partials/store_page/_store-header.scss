@@ -1,0 +1,48 @@
+$header-height: 98px;
+$header-font-size: 3rem;
+
+#store-header {
+	height: $header-height;
+	background-color: black;
+	color: $nav-font-color;
+	display: flex;
+
+	.logo-holder {
+		margin: 0;
+		width: 225px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	ul {
+		flex-grow: 1;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		height: $header-height;
+		font-size: $header-font-size;
+		font-weight: bold;
+
+		li {
+			margin-right: 5%;
+			letter-spacing: 0.3rem;
+
+			&:hover a{
+				@extend .active-link;
+				cursor: pointer;
+				color: rgba($nav-font-color, 1);
+			}
+
+			a {
+				color: $nav-font-color;
+				@include link-reset;
+			}
+
+		}
+	}
+}

@@ -1,0 +1,50 @@
+#main-content{
+
+  #ads{
+    width: 23%;
+    float: left;
+    margin-left:3%;
+  }
+
+  #blog{
+    width: 40%;
+    float: left;
+    margin-left:3%;
+  }
+
+  #members{
+    width: 25%;
+    float:left;
+    margin-left:3%;
+  }
+}
+
+@media only screen and (max-width:1000px){
+  #main-content{
+
+    #ads{
+      width: 24%;
+    }
+
+    #blog{
+      width: 68%;
+    }
+
+    #members{
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width:790px){
+  #main-content{
+    #ads{
+      width: 100%;
+      margin-left: 0;
+    }
+    #blog{
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+body * {
+	box-sizing: border-box;
+	font-family: $main-font;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+#container {
+	width: 100%;
+	background-color: #F2F2F2;
+}
+
+#main-content{
+	margin: 0 auto;
+	max-width: 1400px;
+	
+	overflow: hidden;
+}
+
+.nav-expanded{
+	max-height: 200px !important;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.clearfix{
+	clear: both;
+}
+
+.hidden{
+	display: none;
+}
+
+.full-width{
+	width:100% !important;
+}
+
+.active-link{
+	color: rgba($nav-font-color, 1);
+}
+
+@media only screen and (min-width: 740px){
+	.animsition-loading{
+		margin-top: 6%;
+	}
+}

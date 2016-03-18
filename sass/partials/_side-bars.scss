@@ -1,0 +1,51 @@
+.side-bar{
+  margin-top: 25px;
+
+  @media only screen and (max-width:790px){
+    margin: 0 15px 30px 15px;
+  }
+
+  h4{
+    font-size: 2.5rem;
+    margin:0 0 10px 0;
+
+    @media only screen and (max-width:790px){
+      font-size:$mobile-header-size;
+      text-align: center;
+    }
+  }
+
+  .side-content-wrapper{
+    padding: 15px;
+    background-color: white;
+    border-top: 5px solid #E5E5E5;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.05);
+
+    figure{
+      margin: 0;
+
+      @media only screen and (max-width:790px){
+				float: left;
+				width: 40%;
+        margin: 0 15px 5px 0;
+			}
+
+      img{
+        width: 100%;
+      }
+    }
+
+    p{
+      font-family: $article-font;
+      font-size: $side-font-size;
+			line-height: 2.3rem;
+      word-spacing: 0.5rem;
+
+      @media only screen and (max-width:790px){
+				font-size: $mobile-font-size - 0.5;
+        line-height: $mobile-line-height;
+			}
+    }
+  }
+
+}

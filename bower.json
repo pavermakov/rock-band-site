@@ -1,0 +1,28 @@
+{
+  "name": "rock-band-website",
+  "description": "Senior Project",
+  "main": "",
+  "authors": [
+    "Pavel Ermakov <pavermakov@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/pavermakov/rock-band-site",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "jquery-timeago": "~1.5.1",
+    "transparency": "~0.11.0",
+    "animsition": "~4.0.1",
+    "urijs": "uri.js#~1.17.1",
+    "protonet/jquery.inview": "jquery.inview#~1.1.2"
+  }
+}

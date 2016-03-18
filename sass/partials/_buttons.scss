@@ -1,0 +1,56 @@
+.link_to_fb, .link_to_about {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: $date-color;
+	margin-top: 30px;
+	@include transition(all, 0.2s, ease-in-out);
+
+	&:hover {
+		color: #6a6a6a;
+	}
+
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+
+	.fa-external-link {
+		font-size: 1rem;
+	}
+
+}
+
+.link_to_external {
+	font-size: inherit;
+	text-decoration: none;
+	color: $date-color;
+	margin-top: 30px;
+	@include transition(all, 0.2s, ease-in-out);
+
+	&:hover {
+		color: #6a6a6a;
+		font-weight: bold;
+	}
+
+	&:active {
+		position: relative;
+		top: 1px;
+	}
+
+	.fa-external-link {
+		position: relative;
+		left: -9px;
+		font-size: 1.2rem;
+	}
+}
+
+.loading-box{
+	margin: 0 15px 45px 15px;
+	padding: 30px 0;
+	text-align:center;
+	font-size: 2.5rem;
+	color: #909090;
+}
+

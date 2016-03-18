@@ -1,0 +1,53 @@
+/* Designing article posts */
+
+article.post{
+	margin: 0 15px 30px 15px;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+	.article-title{
+		display: inline-block;
+		margin-bottom: $article-header-margin-bottom;
+		font-size: $article-header-size;
+		font-weight: bold;
+	}
+
+	.article-date{
+		display: block;
+		margin:0;
+		font-size: $sub-text-size;
+		color: $date-color;
+	}
+
+	.article-content{
+		@include article-design;
+
+
+
+		figure{
+
+			margin: 0 0 15px 0;
+
+			.article-image{
+				width: 100%;
+			}
+		}
+
+		.article-text{
+			margin: 0;
+			padding: 0;
+			font-family: $article-font;
+			font-size: $article-text-size;
+			line-height: $artilce-line-height;
+			word-spacing: 0.5rem;
+			text-align: left;
+		}
+
+		hr{
+			margin: 5px 0 0 0;
+			opacity: 0.2;
+		}
+	}
+}

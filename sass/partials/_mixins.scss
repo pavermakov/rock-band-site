@@ -1,0 +1,51 @@
+/* Mixins */
+
+@mixin flex-direction($direction){
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+@mixin display-flex(){
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin align-items($align){
+	-webkit-box-align: $align;
+	-webkit-align-items: $align;
+	-ms-flex-align: $align;
+	align-items: $align;
+}
+
+@mixin justify-content($justify){
+	-webkit-box-pack: $justify;
+	-webkit-justify-content: $justify;
+	-ms-flex-pack: $justify;
+	justify-content: $justify;
+}
+
+@mixin transition($property, $duration, $func){
+	-webkit-transition: $property $duration $func;
+	-moz-transition: $property $duration $func;
+	-o-transition: $property $duration $func;
+	transition: $property $duration $func;
+}
+
+@mixin link-reset{
+	&:link, &:visited{
+		text-decoration: none;
+	}
+}
+
+@mixin article-design {
+	margin-top: 5px;
+	padding: 15px;
+	background-color: white;
+	border-top: 5px solid #E5E5E5;
+	box-shadow: $section-box-shadow;
+}

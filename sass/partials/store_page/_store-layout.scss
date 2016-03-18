@@ -1,0 +1,33 @@
+#main-content {
+
+	#info-panel {
+		min-width: 200px;
+		float: left;
+		margin-left: 3%;
+	}
+
+	#product-list {
+		width: 76%;
+		float: left;
+		margin-left: 3%;
+	}
+}
+
+@media only screen and (max-width:1170px){
+	#main-content {
+
+		#info-panel {
+			width: 95%;
+			float: none;
+			margin-left: 2.5%;
+			margin-right: 2.5%;
+		}
+
+		#product-list {
+			width: 95%;
+			float: none;
+			margin-left: 2.5%;
+			margin-right: 2.5%;
+		}
+	}
+}
