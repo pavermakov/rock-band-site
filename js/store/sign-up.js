@@ -87,7 +87,7 @@ var Sign_up = (function(){
 	}
 
 	function addEventListeners() {
-		$('.my-sign-up').click(_openSignUpModal);
+		$('.store-controls').on('click', '.my-sign-up',_openSignUpModal);
 	}
 
 	return {

@@ -57,7 +57,7 @@
 										<i class='fa fa-shopping-cart'></i>
 										<p>My Cart</p>
 									</div>
-									<div class='control'>
+									<div class='control my-sign-out'>
 										<p><i class='fa fa-sign-out'></i> Log Out</p>
 									</div>
 								";
@@ -123,6 +123,7 @@
 		<script src="bower_components/vex/js/vex.js"></script>
 		<script src="bower_components/vex/js/vex.dialog.js"></script>
 		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
+		<!-- Sign up scrip gotta go first -->
 		<script src="js/store/sign-up.js"></script>
 		<script src="js/store/sign-out.js"></script>
 		
