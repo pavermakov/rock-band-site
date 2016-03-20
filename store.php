@@ -1,5 +1,8 @@
 <?php
+	session_start();
+	// require_once("./php_scripts/misc/session_starter.php");
 	require_once("./php_scripts/db/connect_db.php");
+	require_once("./php_scripts/db/get_products.php");
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +16,8 @@
 	<link rel="stylesheet" href="css/normilize.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/store_page.css">
+	<link rel="stylesheet" href="bower_components/vex/css/vex.css">
+	<link rel="stylesheet" href="bower_components/vex/css/vex-theme-wireframe.css">
 </head>
 <body>
 
@@ -39,8 +44,38 @@
 
 			<aside id="info-panel" class="side-bar">
 				<div class="store-controls side-content-wrapper">
-					<div><p><i class="fa fa-user"></i>My Account</p></div>
-					<div><p><i class="fa fa-shopping-cart"></i>My Cart</p></div>
+					<div class="controls">
+						<?php
+
+							if(isset($_SESSION["user_id"])) {
+								echo "
+									<div class='control'>
+										<i class='fa fa-user'></i>
+										<p>My Account</p>
+									</div>
+									<div class='control'>
+										<i class='fa fa-shopping-cart'></i>
+										<p>My Cart</p>
+									</div>
+									<div class='control'>
+										<p><i class='fa fa-sign-out'></i> Log Out</p>
+									</div>
+								";
+							} else {
+								echo "
+									<div class='control my-sign-in'>
+										<p><i class='fa fa-sign-in'></i> Sign In</p>
+									</div>
+									<div class='control my-sign-up'>
+										<p><i class='fa fa-user-plus'></i> Sign Up</p>
+									</div>
+								";
+							}
+
+						?>
+					
+					</div>
+
 				</div>
 
 				<div class="social-links side-content-wrapper">
@@ -81,8 +116,15 @@
 			BOBBY BUBONIC &copy; THE PLAGUE 2016 <br> ALL RIGHTS RESERVED
 		</footer>
 
+		
 
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="bower_components/vex/js/vex.js"></script>
+		<script src="bower_components/vex/js/vex.dialog.js"></script>
+		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
+		<script src="js/store/sign-up.js"></script>
+		<script src="js/store/sign-out.js"></script>
 		
 	</div><!-- end of #container -->
 

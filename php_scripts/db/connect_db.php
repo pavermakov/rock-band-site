@@ -1,8 +1,9 @@
 <?php
-define("ROOT_PATH", "php_scripts/");
+define("ROOT_PATH", dirname(dirname(__FILE__)));
 
-require_once(ROOT_PATH . "vendor/medoo.php");
-require_once(ROOT_PATH . "db/db_login_info.php");
+
+require_once(ROOT_PATH . "/vendor/medoo.php");
+require_once(ROOT_PATH . "/db/db_login_info.php");
 
 $database = new medoo([
 	'database_type' => 'mysql',
@@ -13,4 +14,3 @@ $database = new medoo([
 	'charset' => 'utf8'
 ]);
 
-$products = $database->select("products", ["product_name", "product_price", "product_image"]);

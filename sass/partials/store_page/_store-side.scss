@@ -5,7 +5,13 @@
 	.store-controls {
 		padding-left: 12%;
 
+		.control:not(:last-child){
+			margin-bottom: 15px;
+		}
+
+
 		p {
+			margin: 0;
 			display: inline;
 			transition: all 0.2s ease-in;
 
@@ -22,7 +28,25 @@
 		}
 
 		.fa-shopping-cart {
-			margin-right: 10px;
+			margin-right: 11px;
+		}
+
+		.fa-sign-out { // Log out
+			position: relative;
+			left: 3px;
+			margin-right: 13px;
+		}
+
+		.fa-sign-in {
+			position: relative;
+			left: 3px;
+			margin-right: 14px;
+		}
+
+		.fa-user-plus {
+			position: relative;
+			left: 3px;
+			margin-right: 9px;
 		}
 
 	}
@@ -47,19 +71,15 @@
 		.store-controls {
 			display: flex;
 			flex-direction: row;
-			justify-content:flex-start;
+			justify-content:space-around;
 			padding-left: 15px;
 			height: 50px;
-			width: 50%;
+			width: 55%;
 			float: left;
-
-			div:last-child{
-				padding-left: 25px;
-			}
 		}
 
 		.social-links {
-			width: 50%;
+			width: 45%;
 			float: left;
 			margin-top: 0;
 			height: 50px;

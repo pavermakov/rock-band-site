@@ -1,0 +1,26 @@
+.vex-overlay {
+	background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.vex-dialog-form {
+	font-size: 1.8rem;
+
+	.vex-dialog-input {
+
+		input:not(:first-child){
+			margin-top: 15px !important;
+		}
+	}
+
+	label.error {
+		font-size: 0.9em;
+		color: #64260B;
+		font-weight: bold;
+		font-style: italic;
+	}
+
+	.vex-dialog-message {
+		font-size: 2.7rem;
+		font-weight: bold;
+	}
+}
