@@ -2,7 +2,7 @@ var View_product = (function(){
 
 	function _openViewProductModal(){
 		var $product = $(this).closest('.product-item');
-
+		
 
 		var _productProperties = {
 			name: $product.data('name'),
@@ -34,10 +34,11 @@ var View_product = (function(){
 				$(figure)
 					.append(this.buildPriceFigcaption())
 					.append(this.buildImage())
-					.append(this.buildSizePicker())
-					.append(this.buildQuantityPicker());
 
-
+				if(this.multiple_sizes){
+					$(figure).append(this.buildSizePicker());
+				}
+					
 				return $(figure);
 			},
 
@@ -108,18 +109,67 @@ var View_product = (function(){
 				}
 
 				function buildQuantityControls() {
+					var quantityControls = document.createElement('div');
 					var number = document.createElement('span');
 					var less = document.createElement('i');
 					var more = document.createElement('i');
 
+					$(number)
+						.addClass('total-quantity')
+						.html('1');
 
+					$(less).addClass('fa fa-minus-square-o');
+
+					$(more).addClass('fa fa-plus-square-o');
+
+					$(quantityControls)
+						.addClass('quantity-controls')
+						.append($(less))
+						.append($(number))
+						.append($(more));
+
+					return $(quantityControls);
 				}
 
 				$(quantityPicker)
 					.addClass('quantity-picker')
-					.append(buildTitle());
+					.append(buildTitle())
+					.append(buildQuantityControls());
 
 				return $(quantityPicker);
+			},
+
+			buildButtons: function() {
+				var buttonContainer = document.createElement('div');
+
+				function buildOrderButton() {
+					var orderButton = document.createElement('button');
+
+					$(orderButton)
+						.addClass('order-button vex-dialog-button-primary vex-dialog-button')
+						.attr('type', 'button')
+						.html('buy now');
+
+					return $(orderButton);
+				}
+
+				function buildAddToCartButton() {
+					var cart = document.createElement('button');
+
+					$(cart)
+						.addClass('cart-button vex-dialog-button-secondary vex-dialog-button')
+						.attr('type', 'button')
+						.html('add to cart');
+
+					return $(cart);
+				}
+
+				$(buttonContainer)
+					.addClass('button-container')
+					.append(buildAddToCartButton())
+					.append(buildOrderButton());
+
+				return $(buttonContainer);
 			},
 
 			buildModal: function(){
@@ -128,15 +178,19 @@ var View_product = (function(){
 				$(div)
 					.addClass('product-modal')
 					.append(this.buildHeader())
-					.append(this.buildFigure());
+					.append(this.buildFigure())
+					.append(this.buildQuantityPicker())
+					.append(this.buildButtons());
 
-				return $(div);	
-				
+				return $(div);		
 			}
 
 		};
 
-		console.log(_productProperties);
+		function changeModalSetting() {
+			$('.vex-content').addClass('custom-vex-width');
+			$('.vex').addClass('custom-vex-padding-top');
+		}
 
 		vex.open({
 			content: _productProperties.buildModal(),
@@ -145,10 +199,9 @@ var View_product = (function(){
 		});
 	}
 
-	function changeModalSetting(){
-		$('.vex-content').addClass('custom-vex-width');
-		$('.vex').addClass('custom-vex-padding-top');
-	}
+
+
+	
 
 	function addEventListener(){
 		$('#product-list').on('click', '.view-button', _openViewProductModal);

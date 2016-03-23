@@ -324,9 +324,8 @@ html {
 .product-modal .size-picker {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
   margin-top: 1.3rem;
-  margin-bottom: 1.3rem;
   font-weight: bold; }
   .product-modal .size-picker .size-title {
     flex-grow: 2;
@@ -337,13 +336,53 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 3rem; }
+    font-size: 3rem;
+    color: #5b5b5b; }
     .product-modal .size-picker .product-sizes span:hover {
       cursor: pointer;
       border-bottom: 2px dotted #5b5b5b; }
     .product-modal .size-picker .product-sizes .selected-size {
+      color: black;
       padding-bottom: 5px;
       border-bottom: 2px dotted black; }
+
+.product-modal .quantity-picker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1.7rem; }
+  .product-modal .quantity-picker .quantity-title {
+    flex-grow: 2;
+    font-family: "Hind", sans-serif;
+    font-size: 2.2rem;
+    font-weight: bold; }
+  .product-modal .quantity-picker .quantity-controls {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 3rem; }
+    .product-modal .quantity-picker .quantity-controls .total-quantity {
+      font-weight: bold;
+      padding: 0 10px; }
+    .product-modal .quantity-picker .quantity-controls i {
+      color: #5b5b5b; }
+      .product-modal .quantity-picker .quantity-controls i:hover {
+        color: black;
+        cursor: pointer; }
+
+.product-modal .button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 1.7rem; }
+  .product-modal .button-container button {
+    font-size: 1.3rem !important;
+    font-weight: bold !important;
+    float: none !important; }
+  .product-modal .button-container .cart-button {
+    margin: 0; }
 
 #page-footer {
   padding: 10px 0;
