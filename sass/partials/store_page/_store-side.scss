@@ -3,22 +3,27 @@
 	color: $middle-gray;
 
 	.store-controls {
-		padding-left: 12%;
 
-		.control:not(:last-child){
+		.control {
+			display: inline-block;
+			// border-bottom: 2px solid transparent;
 			margin-bottom: 15px;
-		}
-
-
-		p {
-			margin: 0;
-			display: inline;
-			transition: all 0.2s ease-in;
 
 			&:hover {
 				cursor: pointer;
+				// outline-bottom: 2px solid $dark-gray;
 				color: $dark-gray;
 			}
+			
+			p {
+				margin: 0;
+				display: inline;
+				transition: all 0.2s ease-in;	
+			}
+		}		
+
+		.my-sign-out, .my-sign-up {
+			margin-bottom: 0;
 		}
 
 		.fa-user {
@@ -55,6 +60,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
+		align-items: center;
 
 		margin-top: 25px;
 	}
@@ -67,15 +73,27 @@
 		margin-bottom: 25px;
 		width: 100%;
 		
-
 		.store-controls {
-			display: flex;
-			flex-direction: row;
-			justify-content:space-around;
-			padding-left: 15px;
 			height: 50px;
 			width: 55%;
 			float: left;
+			padding-left: 15px;
+
+			.controls {
+				position: relative;
+				top: -3px;
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;	
+
+				.control {
+					margin-right: 30px;
+				}
+
+				.fa {
+					display: none;
+				}
+			}
 		}
 
 		.social-links {
@@ -92,6 +110,6 @@
 @media only screen and (max-width:790px){
 	// overiding the _side-bars.scss rule
 	#info-panel {
-		margin-top: 25px;
+		display: none;
 	}
 }

@@ -1,3 +1,4 @@
+// General
 .vex-overlay {
 	background: rgba(255, 255, 255, 0.7) !important;
 }
@@ -22,5 +23,90 @@
 	.vex-dialog-message {
 		font-size: 2.7rem;
 		font-weight: bold;
+	}
+}
+
+// Modal that opens when viewing the page
+.custom-vex-width {
+	width: 500px !important;
+}
+
+.custom-vex-padding-top {
+	padding-top: 30px !important;
+}
+
+.product-modal {
+	
+	// Close button
+	& + .vex-close:before {
+		height: 0 !important;
+		width: 0 !important;
+		top: -2px !important;
+    right: 41px !important;
+	}
+
+	.vex-dialog-message {
+		font-family: "Hind", sans-serif;
+		padding-right: 30px;
+		margin-bottom: 0.3em;
+		font-size: 2.7rem;
+
+		font-weight: bold;
+		line-height: normal;
+	}
+	
+	figure {
+		position: relative;
+		margin: 0;
+
+		img {
+			width: 100%;
+		}
+
+		.product-modal-price {
+			font-family: "Hind", sans-serif;
+			font-size: 2.5rem;
+			margin-bottom: 0.5em;
+		}
+	}
+
+	.size-picker {		
+		display: flex;
+		flex-direction: row;	
+		align-items: baseline;	
+		margin-top: 1.3rem;
+		margin-bottom: 1.3rem;
+		font-weight: bold;
+
+		.size-title {
+			flex-grow: 2;
+			font-size: 2.2rem;
+			font-family: "Hind", sans-serif;
+		}
+
+		.product-sizes {
+			flex-grow: 3;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			font-size: 3rem;
+
+			span{
+
+				&:hover {
+					cursor: pointer;
+					border-bottom: 2px dotted $middle-gray;
+				}
+			}
+
+			.selected-size {
+				padding-bottom: 5px;
+				border-bottom: 2px dotted black;
+			}
+		}
+	}
+
+	.quantity-picker {
+		
 	}
 }

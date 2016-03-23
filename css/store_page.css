@@ -143,39 +143,41 @@ html {
 #info-panel {
   font-size: 1.8rem;
   color: #5b5b5b; }
-  #info-panel .store-controls {
-    padding-left: 12%; }
-    #info-panel .store-controls .control:not(:last-child) {
-      margin-bottom: 15px; }
-    #info-panel .store-controls p {
+  #info-panel .store-controls .control {
+    display: inline-block;
+    margin-bottom: 15px; }
+    #info-panel .store-controls .control:hover {
+      cursor: pointer;
+      color: #2d2d2d; }
+    #info-panel .store-controls .control p {
       margin: 0;
       display: inline;
       transition: all 0.2s ease-in; }
-      #info-panel .store-controls p:hover {
-        cursor: pointer;
-        color: #2d2d2d; }
-    #info-panel .store-controls .fa-user {
-      position: relative;
-      left: 2px;
-      margin-right: 13px; }
-    #info-panel .store-controls .fa-shopping-cart {
-      margin-right: 11px; }
-    #info-panel .store-controls .fa-sign-out {
-      position: relative;
-      left: 3px;
-      margin-right: 13px; }
-    #info-panel .store-controls .fa-sign-in {
-      position: relative;
-      left: 3px;
-      margin-right: 14px; }
-    #info-panel .store-controls .fa-user-plus {
-      position: relative;
-      left: 3px;
-      margin-right: 9px; }
+  #info-panel .store-controls .my-sign-out, #info-panel .store-controls .my-sign-up {
+    margin-bottom: 0; }
+  #info-panel .store-controls .fa-user {
+    position: relative;
+    left: 2px;
+    margin-right: 13px; }
+  #info-panel .store-controls .fa-shopping-cart {
+    margin-right: 11px; }
+  #info-panel .store-controls .fa-sign-out {
+    position: relative;
+    left: 3px;
+    margin-right: 13px; }
+  #info-panel .store-controls .fa-sign-in {
+    position: relative;
+    left: 3px;
+    margin-right: 14px; }
+  #info-panel .store-controls .fa-user-plus {
+    position: relative;
+    left: 3px;
+    margin-right: 9px; }
   #info-panel .social-links {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     margin-top: 25px; }
 
 @media only screen and (max-width: 1170px) {
@@ -183,13 +185,20 @@ html {
     margin-bottom: 25px;
     width: 100%; }
     #info-panel .store-controls {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      padding-left: 15px;
       height: 50px;
       width: 55%;
-      float: left; }
+      float: left;
+      padding-left: 15px; }
+      #info-panel .store-controls .controls {
+        position: relative;
+        top: -3px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; }
+        #info-panel .store-controls .controls .control {
+          margin-right: 30px; }
+        #info-panel .store-controls .controls .fa {
+          display: none; }
     #info-panel .social-links {
       width: 45%;
       float: left;
@@ -198,7 +207,7 @@ html {
 
 @media only screen and (max-width: 790px) {
   #info-panel {
-    margin-top: 25px; } }
+    display: none; } }
 
 #product-list {
   margin-top: 5px;
@@ -206,14 +215,20 @@ html {
   background-color: white;
   border-top: 5px solid #E5E5E5;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
+  -webkit-box-pack: space-between;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
   justify-content: space-between;
   margin-top: 25px;
   margin-bottom: 25px;
   padding: 25px; }
   #product-list .product-item {
-    padding: 2%;
+    padding: 15px 2%;
     flex-grow: 1;
     flex-shrink: -1;
     max-width: 33%; }
@@ -237,28 +252,28 @@ html {
         position: relative;
         top: 2px;
         font-family: "Hind", sans-serif; }
-      #product-list .product-item figure .order-button {
+      #product-list .product-item figure .view-button {
         font-size: 1.8rem;
         float: right;
-        color: #5b5b5b;
-        background-color: #efefef;
+        color: #efefef;
+        background-color: #5b5b5b;
         border: 2px solid #b7b7b7;
         padding: 1px 10px;
         transition: all 0.1s ease-in;
         border-radius: 2px;
         font-family: "Hind", sans-serif;
         letter-spacing: 1px; }
-        #product-list .product-item figure .order-button:hover {
+        #product-list .product-item figure .view-button:hover {
           cursor: pointer;
-          color: #2d2d2d;
           border-color: #5b5b5b; }
 
-#page-footer {
-  padding: 10px 0;
-  background-color: #222222;
-  color: white;
-  text-align: center;
-  font-size: 1.5rem; }
+@media only screen and (max-width: 940px) {
+  #product-list .product-item {
+    max-width: 50%; } }
+
+@media only screen and (max-width: 550px) {
+  #product-list .product-item {
+    max-width: 100%; } }
 
 .vex-overlay {
   background: rgba(255, 255, 255, 0.7) !important; }
@@ -275,3 +290,64 @@ html {
   .vex-dialog-form .vex-dialog-message {
     font-size: 2.7rem;
     font-weight: bold; }
+
+.custom-vex-width {
+  width: 500px !important; }
+
+.custom-vex-padding-top {
+  padding-top: 30px !important; }
+
+.product-modal + .vex-close:before {
+  height: 0 !important;
+  width: 0 !important;
+  top: -2px !important;
+  right: 41px !important; }
+
+.product-modal .vex-dialog-message {
+  font-family: "Hind", sans-serif;
+  padding-right: 30px;
+  margin-bottom: 0.3em;
+  font-size: 2.7rem;
+  font-weight: bold;
+  line-height: normal; }
+
+.product-modal figure {
+  position: relative;
+  margin: 0; }
+  .product-modal figure img {
+    width: 100%; }
+  .product-modal figure .product-modal-price {
+    font-family: "Hind", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5em; }
+
+.product-modal .size-picker {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  font-weight: bold; }
+  .product-modal .size-picker .size-title {
+    flex-grow: 2;
+    font-size: 2.2rem;
+    font-family: "Hind", sans-serif; }
+  .product-modal .size-picker .product-sizes {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 3rem; }
+    .product-modal .size-picker .product-sizes span:hover {
+      cursor: pointer;
+      border-bottom: 2px dotted #5b5b5b; }
+    .product-modal .size-picker .product-sizes .selected-size {
+      padding-bottom: 5px;
+      border-bottom: 2px dotted black; }
+
+#page-footer {
+  padding: 10px 0;
+  background-color: #222222;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem; }

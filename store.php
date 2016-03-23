@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	// require_once("./php_scripts/misc/session_starter.php");
 	require_once("./php_scripts/db/connect_db.php");
 	require_once("./php_scripts/db/get_products.php");
 ?>
@@ -50,15 +49,13 @@
 							if(isset($_SESSION["user_id"])) {
 								echo "
 									<div class='control'>
-										<i class='fa fa-user'></i>
-										<p>My Account</p>
+										<p><i class='fa fa-user'></i>My Account</p>
 									</div>
 									<div class='control'>
-										<i class='fa fa-shopping-cart'></i>
-										<p>My Cart</p>
+										<p><i class='fa fa-shopping-cart'></i>My Cart</p>
 									</div>
 									<div class='control my-sign-out'>
-										<p><i class='fa fa-sign-out'></i> Log Out</p>
+										<p><i class='fa fa-sign-out'></i>Log Out</p>
 									</div>
 								";
 							} else {
@@ -73,7 +70,7 @@
 							}
 
 						?>
-					
+						<div class="clearfix"></div>
 					</div>
 
 				</div>
@@ -92,14 +89,15 @@
 
 				<?php 
 					foreach ($products as $product) {
+						# don't forget to add new fields into the get_products.php file
 						echo "
-							<div class='product-item'>
+							<div class='product-item' data-price='". $product["product_price"] ."' data-name='". $product["product_name"] ."' data-multiple-size='". $product["multiple_size"] ."'>
 								<figure>
 									<img src='". $product["product_image"] ."' alt='". $product["product_name"] ."'>
 									<figcaption class='product-name'>". $product["product_name"] ."</figcaption>
 									<figcaption>
-										<i class='product-price'>$". $product["product_price"] ."</i>
-										<div class='order-button'>order</div>
+										<span class='product-price'>$". $product["product_price"] ."</span>
+										<button type='button' class='view-button'>view</button>
 										<div class='clearfix'></div>
 									</figcaption>
 								</figure>
@@ -124,7 +122,9 @@
 		<script src="bower_components/vex/js/vex.dialog.js"></script>
 		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
 		<!-- Sign up scrip gotta go first -->
+		<script src="js/store/view-product.js"></script>
 		<script src="js/store/sign-up.js"></script>
+		<script src="js/store/sign-in.js"></script>
 		<script src="js/store/sign-out.js"></script>
 		
 	</div><!-- end of #container -->

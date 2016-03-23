@@ -5,7 +5,7 @@ require_once("connect_db.php");
 // returns the id of the inserted element
 $successful_insert = $database->insert("users", [
 	"email" => $_POST['email'],
-	"password" => $_POST['password']
+	"#password" => password_hash($_POST['password'], PASSWORD_BCRYPT)
 ]);
 
 if($successful_insert != "0"){

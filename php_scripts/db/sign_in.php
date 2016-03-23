@@ -1,33 +1,33 @@
 <?php
+session_start();
 require_once("connect_db.php");
 
 $errors = array();
 $data = array();
 
-// validate the variables ======================================================
-
+// check if email exists ======================================================
 if (empty($_POST['email'])) {
 	$errors['email'] = 'Email is required.';
 } else {
-	// make sure the user is unique ================================================
+	// make sure the user exists
 	$users = $database->select("users", "id", ["email" => $_POST["email"]]);
-	if(count($users) != 0) {
-		$errors['already_exists'] = "This email already exists.";
+	if(count($users) == 0) {
+		$errors['not_exist'] = "The user with this email does not exist";
 	}	
 }
-	
 
-if (empty($_POST['password']))
+if (empty($_POST['password'])) {
 	$errors['password'] = 'Password is required.';
+} else if(empty($errors)) {
+	$db_pass = $database->select("users", "password", [
+		"email" => $_POST["email"]
+	]);
 
-if (empty($_POST['conf_pass']))
-	$errors['conf_pass'] = 'Please, confirm password.';
-
-if($_POST["password"] != $_POST["conf_pass"])
-	$errors['pass_mismatch'] = 'Passwords must match.';
-
-
-
+	if(!password_verify($_POST['password'], $db_pass[0])) {
+		$errors['wrong_pass'] = "Wrong Password";
+	}
+}
+	
 
 // return a response ===========================================================
 
@@ -35,10 +35,12 @@ if (!empty($errors)) {
   // if there are items in our errors array, return those errors
   $data['success'] = false;
   $data['errors']  = $errors;
+  $data['a'] = $db_pass[0];
 } else {
-
+	$_SESSION["user_id"] = $users;
 	$data['success'] = true;
 	$data['message'] = 'Success';
+	$data['a'] = $db_pass[0];
 }
 
 echo json_encode($data);

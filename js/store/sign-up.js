@@ -6,7 +6,7 @@ var Sign_up = (function(){
 		conf_pass: "<input name='conf_pass' type='password' placeholder='Confirm Password' />"
 	};
 
-	var _validateionObj = {
+	var _validationObj = {
 		rules: {
 			email: {
 				required: true,
@@ -14,7 +14,8 @@ var Sign_up = (function(){
 			},
 			password: {
 				required: true,
-				minlength: 5
+				minlength: 5,
+				equalTo: "input[name='conf_pass']"
 			},
 			conf_pass: {
 				required: true,
@@ -41,7 +42,7 @@ var Sign_up = (function(){
 		    })
 		  ],
 		  afterOpen: function() {
-		  	$(".vex-dialog-form").validate(_validateionObj);
+		  	$(".vex-dialog-form").validate(_validationObj);
 		  },
 		  onSubmit: function(event) {
         event.stopPropagation();  
@@ -52,7 +53,7 @@ var Sign_up = (function(){
         	'email': $('input[name=email]').val(),
         	'password': $('input[name=password]').val(),
         	'conf_pass': $('input[name=conf_pass]').val()
-        }
+        };
 
         $.ajax({
         	type: 'POST',
