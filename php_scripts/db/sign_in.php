@@ -35,12 +35,10 @@ if (!empty($errors)) {
   // if there are items in our errors array, return those errors
   $data['success'] = false;
   $data['errors']  = $errors;
-  $data['a'] = $db_pass[0];
 } else {
 	$_SESSION["user_id"] = $users;
 	$data['success'] = true;
 	$data['message'] = 'Success';
-	$data['a'] = $db_pass[0];
 }
 
 echo json_encode($data);

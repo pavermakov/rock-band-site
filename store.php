@@ -122,10 +122,12 @@
 		<script src="bower_components/vex/js/vex.dialog.js"></script>
 		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
 		<!-- Sign up scrip gotta go first -->
-		<script src="js/store/view-product.js"></script>
+		
 		<script src="js/store/sign-up.js"></script>
 		<script src="js/store/sign-in.js"></script>
 		<script src="js/store/sign-out.js"></script>
+		<script src="js/store/buy-now.js"></script>
+		<script src="js/store/view-product.js"></script>
 		
 	</div><!-- end of #container -->
 

@@ -2,7 +2,8 @@ var Sign_in = (function(){
 
 	var _inputs = {
 		email: "<input name='email' type='email' placeholder='E-mail' />",
-		password: "<input name='password' type='password' placeholder='Password' />"
+		password: "<input name='password' type='password' placeholder='Password' />",
+		signUp: "<div class='emergency'>No account? <div class='emergency-btn e-sign-up'>Sign&nbsp;up</div></div>"
 	};
 
 	var _validationObj = {
@@ -19,11 +20,15 @@ var Sign_in = (function(){
 	};
 
 	function _concatInputs(){
-		return _inputs.email + "\n" + _inputs.password;
+		return _inputs.email + "\n" + _inputs.password + "\n" + _inputs.signUp;
 	}
 
 	function _openSignInModal() {
 		console.log('Signing in');
+
+		function _emergencyEventListener(dialog) {
+			$('.e-sign-up').click(_openSignUp(dialog));
+		}
 
 		vex.dialog.open({
 			message: "Sign in",
@@ -37,6 +42,7 @@ var Sign_in = (function(){
 		  ],
 		  afterOpen: function() {
 		  	$(".vex-dialog-form").validate(_validationObj);
+		  	_emergencyEventListener($(this));
 		  },
 		  onSubmit: function(event) {
 		  	event.stopPropagation();  
@@ -68,6 +74,14 @@ var Sign_in = (function(){
         })
 		  }
 		});
+	}
+
+	function _openSignUp(dialog){
+		return function(e){
+			vex.close(dialog.$vexContent);
+			$('.my-sign-up').click();
+		}
+		
 	}
 
 	function addEventListeners() {

@@ -291,6 +291,16 @@ html {
     font-size: 2.7rem;
     font-weight: bold; }
 
+.emergency {
+  margin-top: 15px;
+  margin-bottom: 0.25em;
+  border-bottom: 2px solid transparent; }
+  .emergency .emergency-btn {
+    display: inline;
+    border-bottom: 1px dashed #5b5b5b; }
+    .emergency .emergency-btn:hover {
+      cursor: pointer; }
+
 .custom-vex-width {
   width: 500px !important; }
 
@@ -367,7 +377,8 @@ html {
       font-weight: bold;
       padding: 0 10px; }
     .product-modal .quantity-picker .quantity-controls i {
-      color: #5b5b5b; }
+      color: #5b5b5b;
+      transition: all 0.2s ease-out; }
       .product-modal .quantity-picker .quantity-controls i:hover {
         color: black;
         cursor: pointer; }

@@ -26,6 +26,22 @@
 	}
 }
 
+.emergency {
+	// the same as modal form fields
+	margin-top: 15px;
+	margin-bottom: 0.25em;
+	border-bottom: 2px solid transparent;
+
+	.emergency-btn {
+		display: inline;
+		border-bottom: 1px dashed $middle-gray;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
 // Modal that opens when viewing the page
 .custom-vex-width {
 	width: 500px !important;
@@ -137,6 +153,7 @@
 
 			i {
 				color: $middle-gray;
+				transition: all 0.2s ease-out;
 
 				&:hover {
 					color: black;

@@ -3,7 +3,8 @@ var Sign_up = (function(){
 	var _inputs = {
 		email: "<input name='email' type='email' placeholder='E-mail' />",
 		password: "<input name='password' type='password' placeholder='Password' />",
-		conf_pass: "<input name='conf_pass' type='password' placeholder='Confirm Password' />"
+		conf_pass: "<input name='conf_pass' type='password' placeholder='Confirm Password' />",
+		signIn: "<div class='emergency'>Already registered? <div class='emergency-btn e-sign-in'>Sign&nbsp;in</div></div>"
 	};
 
 	var _validationObj = {
@@ -26,10 +27,15 @@ var Sign_up = (function(){
 	};
 
 	function _concatInputs() {
-		return _inputs.email + "\n" + _inputs.password + "\n" + _inputs.conf_pass;
+		return _inputs.email + "\n" + _inputs.password + "\n" + _inputs.conf_pass + "\n" + _inputs.signIn;
 	}
 
 	function _openSignUpModal() {
+		console.log('Signing up');
+
+		function _emergencyEventListener(dialog) {
+			$('.e-sign-in').click(_openSignIn(dialog));
+		}
 
 		vex.dialog.open({
 			message: "Sign Up",
@@ -43,6 +49,7 @@ var Sign_up = (function(){
 		  ],
 		  afterOpen: function() {
 		  	$(".vex-dialog-form").validate(_validationObj);
+		  	_emergencyEventListener($(this));
 		  },
 		  onSubmit: function(event) {
         event.stopPropagation();  
@@ -84,6 +91,14 @@ var Sign_up = (function(){
       }
 		});
 
+		
+	}
+
+	function _openSignIn(dialog){
+		return function(e){
+			vex.close(dialog.$vexContent);
+			$('.my-sign-in').click();
+		}
 		
 	}
 
