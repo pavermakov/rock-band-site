@@ -1,0 +1,6 @@
+#main-wrapper {
+	// this container wraps products/carts etc
+	@include article-design;
+	margin-top: 25px;
+	margin-bottom: 25px;	
+}

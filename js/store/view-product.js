@@ -255,7 +255,7 @@ var View_product = (function(Buy_now){
 	}
 
 	function addEventListener(){
-		$('#product-list').on('click', '.view-button', _openViewProductModal);
+		$('#main-wrapper').on('click', '.view-button', _openViewProductModal);
 	}
 
 	return {

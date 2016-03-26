@@ -51,7 +51,7 @@
 									<div class='control'>
 										<p><i class='fa fa-user'></i>My Account</p>
 									</div>
-									<div class='control'>
+									<div class='control my-cart'>
 										<p><i class='fa fa-shopping-cart'></i>My Cart</p>
 									</div>
 									<div class='control my-sign-out'>
@@ -85,26 +85,29 @@
 				<div class="clearfix"></div>
 			</aside>
 
-			<section id="product-list">
+			<section id="main-wrapper">
+				<section class="product-list">
 
-				<?php 
-					foreach ($products as $product) {
-						# don't forget to add new fields into the get_products.php file
-						echo "
-							<div class='product-item' data-price='". $product["product_price"] ."' data-name='". $product["product_name"] ."' data-multiple-size='". $product["multiple_size"] ."'>
-								<figure>
-									<img src='". $product["product_image"] ."' alt='". $product["product_name"] ."'>
-									<figcaption class='product-name'>". $product["product_name"] ."</figcaption>
-									<figcaption>
-										<span class='product-price'>$". $product["product_price"] ."</span>
-										<button type='button' class='view-button'>view</button>
-										<div class='clearfix'></div>
-									</figcaption>
-								</figure>
-							</div>
-						";
-					}
-				?>
+					<?php 
+						foreach ($products as $product) {
+							# don't forget to add new fields into the get_products.php file
+							echo "
+								<div class='product-item' data-price='". $product["product_price"] ."' data-name='". $product["product_name"] ."' data-multiple-size='". $product["multiple_size"] ."'>
+									<figure>
+										<img src='". $product["product_image"] ."' alt='". $product["product_name"] ."'>
+										<figcaption class='product-name'>". $product["product_name"] ."</figcaption>
+										<figcaption>
+											<span class='product-price'>$". $product["product_price"] ."</span>
+											<button type='button' class='view-button'>view</button>
+											<div class='clearfix'></div>
+										</figcaption>
+									</figure>
+								</div>
+							";
+						}
+					?>
+
+				</section>
 
 			</section>
 			
@@ -128,6 +131,7 @@
 		<script src="js/store/sign-out.js"></script>
 		<script src="js/store/buy-now.js"></script>
 		<script src="js/store/view-product.js"></script>
+		<script src="js/store/cart.js"></script>
 		
 	</div><!-- end of #container -->
 

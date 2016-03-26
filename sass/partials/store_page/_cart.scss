@@ -1,0 +1,24 @@
+#cart {
+	
+	.cart-header {
+
+		h2 {
+			text-align: center;
+			font-size: 2.5rem;
+			margin-top: 0;
+		}
+	}
+
+	.back-to-store {
+		display: inline;
+		font-size: 1.7rem;
+		color: $li-mi-gray;
+		@include transition(all, 0.2s, ease-out);
+
+		&:hover {
+			cursor: pointer;
+			color: black;
+		}
+	}
+
+}

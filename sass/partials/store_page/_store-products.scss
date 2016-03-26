@@ -1,11 +1,7 @@
-#product-list {
-	@include article-design;
+.product-list {
 	@include display-flex;
 	flex-wrap: wrap;
 	@include justify-content(space-between);
-	margin-top: 25px;
-	margin-bottom: 25px;
-	padding: 25px;
 
 	.product-item {
 		padding: 15px 2%;
@@ -66,7 +62,7 @@
 }
 
 @media only screen and (max-width:940px){
-	#product-list  {
+	.product-list  {
 		.product-item {
 			max-width: 50%;
 		}		
@@ -74,7 +70,7 @@
 }
 
 @media only screen and (max-width:550px){
-	#product-list  {
+	.product-list  {
 		.product-item {
 			max-width: 100%;
 		}		
