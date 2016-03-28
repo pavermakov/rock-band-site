@@ -7,6 +7,7 @@ var View_product = (function(Buy_now){
 		
 
 		var _productProperties = {
+			id: $product.data('id'),
 			name: $product.data('name'),
 			price: $product.data('price'),
 			multiple_sizes: $product.data('multiple-size'),
@@ -16,7 +17,8 @@ var View_product = (function(Buy_now){
 				var header = document.createElement('div');
 
 				$(header)
-					.addClass('vex-dialog-message')
+					.addClass('vex-dialog-message selected-product-name')
+					.attr('data-id', this.id)
 					.html(this.name);
 
 				return $(header);
@@ -195,6 +197,10 @@ var View_product = (function(Buy_now){
 						.attr('type', 'button')
 						.html('add to cart');
 
+					// add event listeners for this button
+
+					Add_to_cart.init($(cart));
+
 					return $(cart);
 				}
 
@@ -240,7 +246,7 @@ var View_product = (function(Buy_now){
 		vex.open({
 			content: _productProperties.buildModal(),
 			showCloseButton: true,
-			overlayClosesOnClick: false,
+			overlayClosesOnClick: true,
 			afterOpen: changeModalSetting,
 			afterClose: changeDialogState
 		});

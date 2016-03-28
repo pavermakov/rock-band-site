@@ -12,6 +12,7 @@
 	.back-to-store {
 		display: inline;
 		font-size: 1.7rem;
+		margin-left: 2%;
 		color: $li-mi-gray;
 		@include transition(all, 0.2s, ease-out);
 
@@ -19,6 +20,115 @@
 			cursor: pointer;
 			color: black;
 		}
+	}
+
+	.cart-wrapper {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		
+	}
+
+	.cart-item {
+		position: relative;
+		flex-grow: 1;
+		flex-shrink: -1;
+		max-width: 25%;
+		padding: 15px 2%;
+
+		figure {
+			margin: 0;
+			border: 3px solid $light-gray;
+
+			&:hover .fa-times-circle {
+				display: block;
+			}
+
+			.remove-from-cart {
+				display: none;
+				position: absolute;
+				right: 4.5%;
+				top: 6px;
+				color: $li-mi-gray;
+				font-size: 2.5rem;
+				background-color: white;
+				border-radius: 50%;
+				transition: all 0.1s ease-in;
+
+				&:hover {
+					cursor:pointer;
+					color: black;
+				}
+			}
+
+			img {
+				width: 100%;
+			}
+
+			figcaption {
+				font-family: "Hind",sans-serif;
+				text-align: center;
+				font-weight: bold;
+				font-size: 1.5rem;
+			}
+		}
+
+		.cart-item-size, .cart-item-price {
+			display: inline;
+			font-size: 2rem;
+			margin-top: 5px;
+			padding: 5px 5px 0 5px;
+		}
+
+		.cart-item-size {
+			position: relative;
+			top: 4px;
+			float: left;
+		}
+
+		.cart-item-price {
+			float: right;
+			font-family: "Hind",sans-serif;
+			letter-spacing: 1.5px;
+		}
+	}
+
+	.checkout {
+		margin-top: 20px;
+
+		h2{
+			font-family: "Hind",sans-serif;
+			display: inline;
+			font-size: 2.5rem;
+			margin-left: 2%;
+			letter-spacing: 1.5px;
+		}
+
+		.btn-checkout {
+			font-size: 1.8rem;
+			float: right;
+			color: $light-gray;
+			background-color: #5b5b5b;
+			border: 2px solid #b7b7b7;
+			padding: 1px 10px;
+			transition: all 0.1s ease-in;
+			border-radius: 2px;
+			font-family: $article-font;
+			margin-right: 2%;
+			letter-spacing: 1px;
+
+			&:hover {
+				cursor: pointer;
+				border-color: #5b5b5b;
+			}
+		}
+	}
+
+	.empty-cart {
+		font-size: 2rem;
+		color: $li-mi-gray;
+		font-weight: bold;
+		text-transform: uppercase;
 	}
 
 }

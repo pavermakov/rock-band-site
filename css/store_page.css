@@ -91,7 +91,8 @@ html {
 #main-content #main-wrapper {
   width: 76%;
   float: left;
-  margin-left: 3%; }
+  margin-left: 3%;
+  min-height: 250px; }
 
 @media only screen and (max-width: 1170px) {
   #main-content #info-panel {
@@ -284,6 +285,7 @@ html {
 #cart .back-to-store {
   display: inline;
   font-size: 1.7rem;
+  margin-left: 2%;
   color: #777777;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -292,6 +294,86 @@ html {
   #cart .back-to-store:hover {
     cursor: pointer;
     color: black; }
+
+#cart .cart-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+#cart .cart-item {
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: -1;
+  max-width: 25%;
+  padding: 15px 2%; }
+  #cart .cart-item figure {
+    margin: 0;
+    border: 3px solid #efefef; }
+    #cart .cart-item figure:hover .fa-times-circle {
+      display: block; }
+    #cart .cart-item figure .remove-from-cart {
+      display: none;
+      position: absolute;
+      right: 4.5%;
+      top: 6px;
+      color: #777777;
+      font-size: 2.5rem;
+      background-color: white;
+      border-radius: 50%;
+      transition: all 0.1s ease-in; }
+      #cart .cart-item figure .remove-from-cart:hover {
+        cursor: pointer;
+        color: black; }
+    #cart .cart-item figure img {
+      width: 100%; }
+    #cart .cart-item figure figcaption {
+      font-family: "Hind",sans-serif;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.5rem; }
+  #cart .cart-item .cart-item-size, #cart .cart-item .cart-item-price {
+    display: inline;
+    font-size: 2rem;
+    margin-top: 5px;
+    padding: 5px 5px 0 5px; }
+  #cart .cart-item .cart-item-size {
+    position: relative;
+    top: 4px;
+    float: left; }
+  #cart .cart-item .cart-item-price {
+    float: right;
+    font-family: "Hind",sans-serif;
+    letter-spacing: 1.5px; }
+
+#cart .checkout {
+  margin-top: 20px; }
+  #cart .checkout h2 {
+    font-family: "Hind",sans-serif;
+    display: inline;
+    font-size: 2.5rem;
+    margin-left: 2%;
+    letter-spacing: 1.5px; }
+  #cart .checkout .btn-checkout {
+    font-size: 1.8rem;
+    float: right;
+    color: #efefef;
+    background-color: #5b5b5b;
+    border: 2px solid #b7b7b7;
+    padding: 1px 10px;
+    transition: all 0.1s ease-in;
+    border-radius: 2px;
+    font-family: "Hind", sans-serif;
+    margin-right: 2%;
+    letter-spacing: 1px; }
+    #cart .checkout .btn-checkout:hover {
+      cursor: pointer;
+      border-color: #5b5b5b; }
+
+#cart .empty-cart {
+  font-size: 2rem;
+  color: #777777;
+  font-weight: bold;
+  text-transform: uppercase; }
 
 .vex-overlay {
   background: rgba(255, 255, 255, 0.7) !important; }

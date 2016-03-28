@@ -28,6 +28,7 @@
 			</figure>
 
 			<ul class="full-nav">
+				<li><a class="active-link" href="store.php">STORE</a></li>
 				<li><a href="./index.html">NEWS</a></li>
 				<li><a href="music.html">MUSIC</a></li>
 				<li><a href="about.html">ABOUT</a></li>
@@ -92,7 +93,7 @@
 						foreach ($products as $product) {
 							# don't forget to add new fields into the get_products.php file
 							echo "
-								<div class='product-item' data-price='". $product["product_price"] ."' data-name='". $product["product_name"] ."' data-multiple-size='". $product["multiple_size"] ."'>
+								<div class='product-item' data-id='". $product["product_id"] ."' data-price='". $product["product_price"] ."' data-name='". $product["product_name"] ."' data-multiple-size='". $product["multiple_size"] ."'>
 									<figure>
 										<img src='". $product["product_image"] ."' alt='". $product["product_name"] ."'>
 										<figcaption class='product-name'>". $product["product_name"] ."</figcaption>
@@ -130,6 +131,7 @@
 		<script src="js/store/sign-in.js"></script>
 		<script src="js/store/sign-out.js"></script>
 		<script src="js/store/buy-now.js"></script>
+		<script src="js/store/add-to-cart.js"></script>
 		<script src="js/store/view-product.js"></script>
 		<script src="js/store/cart.js"></script>
 		

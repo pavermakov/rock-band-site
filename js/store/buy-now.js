@@ -1,7 +1,7 @@
 var Buy_now = (function(){
 
-	function _attemptToBuy() {
-		console.log('buying')
+	function _isUserOnline() {
+		console.log('buying');
 		// check if user logged in
 		$.ajax({
 			type: 'GET',
@@ -14,7 +14,7 @@ var Buy_now = (function(){
 				console.log('The user is NOT in the system!');
 				requestSignIn();
 			}
-		})
+		});
 	}
 
 	function requestSignIn(){
@@ -22,7 +22,7 @@ var Buy_now = (function(){
 	}
 
 	function addEventListeners($button) {		
-		$button.click(_attemptToBuy);
+		$button.click(_isUserOnline);
 	}
 
 	return {

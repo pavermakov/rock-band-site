@@ -1,8 +1,54 @@
+<?php
+	require_once("../../php_scripts/db/get_cart_orders.php");
+?>
+
 <section id="cart">
 	<header class="cart-header">
 		<div class="back-to-store">
 			<i class="fa fa-angle-double-left"></i> Back to store
 		</div>
 		<h2>Your Cart</h2>
+
 	</header>
+
+	<section class="cart-wrapper">
+		<?php
+			if(!empty($orders)){
+				foreach ($orders as $order) {
+					echo "
+						<div class='cart-item' data-order-id='". $order["order_id"] ."'>
+							<figure>
+								<i class='fa fa-times-circle remove-from-cart'></i>
+								<img src='". $order["product_image"] ."' alt='". $order["product_name"] ."'>
+								<figcaption>". $order["product_name"] ." (x". $order["order_amount"] .")</figcaption>
+							
+					";
+
+					if(!is_null($order["order_size"])){
+						echo "<div class='cart-item-size'>". $order["order_size"] ."</div>";
+					}
+
+					echo "<div class='cart-item-price'>$". $order["order_price"] ."</div>";
+					echo "<div class='clearfix'></div>";
+					echo "</figure>";
+					echo "</div>";
+				}
+			} else {
+				echo "<div class='empty-cart'>empty</div>";
+			}
+		?>
+	</section>
+
+	<?php
+		if(!empty($orders)){
+			echo "
+				<div class='checkout'>
+					<h2>Total: $". $total_sum ."</h2>
+					<button class='btn-checkout' type='button'>Checkout</button>
+					<div class='clearfix'></div>
+				</div>
+			";
+		}
+	?>
+
 </section>

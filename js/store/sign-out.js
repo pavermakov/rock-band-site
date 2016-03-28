@@ -7,6 +7,7 @@ var Sign_out = (function(){
 			url: 'php_scripts/misc/sign_out.php'
 		}).done(function(){
 			$('.store-controls').load('store.php .controls');
+			$('#main-wrapper').load('store.php .product-list');
 		});
 	}
 
