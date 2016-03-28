@@ -174,7 +174,7 @@ html {
   #info-panel .store-controls .fa-sign-out {
     position: relative;
     left: 3px;
-    margin-right: 13px; }
+    margin-right: 11px; }
   #info-panel .store-controls .fa-sign-in {
     position: relative;
     left: 3px;
@@ -494,6 +494,9 @@ html {
     float: none !important; }
   .product-modal .button-container .cart-button {
     margin: 0; }
+
+.growl.growl-default {
+  background-color: black !important; }
 
 #page-footer {
   padding: 10px 0;

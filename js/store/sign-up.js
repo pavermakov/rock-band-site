@@ -83,6 +83,12 @@ var Sign_up = (function(){
         		}).done(function(data){
         			vex.close();
       				$('.store-controls').load('store.php .controls');
+      				$.growl({ 
+								title: "<i class='fa fa-sign-in'></i> Signing in", 
+								message: "Welcome!",
+								location: 'br',
+								size: 'large'
+							});
         		});
         	}
 

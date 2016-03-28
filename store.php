@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="css/store_page.css">
 	<link rel="stylesheet" href="bower_components/vex/css/vex.css">
 	<link rel="stylesheet" href="bower_components/vex/css/vex-theme-wireframe.css">
+	<link rel="stylesheet" href="bower_components/growl/stylesheets/jquery.growl.css">
 </head>
 <body>
 
@@ -56,7 +57,7 @@
 										<p><i class='fa fa-shopping-cart'></i>My Cart</p>
 									</div>
 									<div class='control my-sign-out'>
-										<p><i class='fa fa-sign-out'></i>Log Out</p>
+										<p><i class='fa fa-sign-out'></i>Sign Out</p>
 									</div>
 								";
 							} else {
@@ -125,6 +126,7 @@
 		<script src="bower_components/vex/js/vex.js"></script>
 		<script src="bower_components/vex/js/vex.dialog.js"></script>
 		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
+		<script src="bower_components/growl/javascripts/jquery.growl.js"></script>
 		<!-- Sign up scrip gotta go first -->
 		
 		<script src="js/store/sign-up.js"></script>

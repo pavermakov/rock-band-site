@@ -8,6 +8,12 @@ var Sign_out = (function(){
 		}).done(function(){
 			$('.store-controls').load('store.php .controls');
 			$('#main-wrapper').load('store.php .product-list');
+			$.growl({ 
+				title: "<i class='fa fa-sign-out'></i> Now signed out", 
+				message: "Goodbye!",
+				location: 'br',
+				size: 'large'
+			});
 		});
 	}
 

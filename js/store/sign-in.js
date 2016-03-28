@@ -70,6 +70,13 @@ var Sign_in = (function(){
         	} else {
         		vex.close();
       			$('.store-controls').load('store.php .controls');
+
+      			$.growl({ 
+							title: "<i class='fa fa-sign-in'></i> Now signed in", 
+							message: "Welcome!",
+							location: 'br',
+							size: 'large'
+						});
         	}
         })
 		  }

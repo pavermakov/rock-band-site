@@ -27,14 +27,19 @@ var Add_to_cart = (function(){
 		}).done(function(data){
 			if(data.success) {
 				console.log('Successfully added to cart');
-				_showNotification();
+				vex.close();
+				_showNotification(props);
 			}
 		});
 	}
 
-	function _showNotification() {
-		vex.dialog.alert({
-			message: "<i class='fa fa-shopping-cart'></i> New Item Added!"
+	function _showNotification(props) {
+
+		$.growl({ 
+			title: "<i class='fa fa-shopping-cart'></i> New item added", 
+			message: props.amount + " x " + props.name,
+			location: 'br',
+			size: 'large'
 		});
 	}
 
@@ -42,6 +47,7 @@ var Add_to_cart = (function(){
 
 		var props = {
 			id: $('.vex-dialog-message.selected-product-name').data('id'),
+			name: $('.vex-dialog-message.selected-product-name').html(),
 			amount: $('.total-quantity').html(),
 			price: $('.product-modal-price').data('price'),
 			size: $('.product-sizes .selected-size').html(),
@@ -53,6 +59,7 @@ var Add_to_cart = (function(){
 
 		return {
 			id: props.id,
+			name: props.name,
 			amount: props.amount,
 			price: props.calcTotalPrice(),
 			size: props.size,

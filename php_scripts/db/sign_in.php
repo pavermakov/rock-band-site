@@ -32,15 +32,19 @@ if (empty($_POST['password'])) {
 if(empty($errors)){
 	//check if email is in db
 	$user = $database->select("users", "id", ["email" => $_POST["email"]]);
-	$db_pass = $database->select("users", "password", ["email" => $_POST["email"]]);
+	
 
-	if(!$user){
+	if(count($user) == 0){
 		$errors['not_exist'] = "The user with this email does not exist";
+	} else {
+		$db_pass = $database->select("users", "password", ["email" => $_POST["email"]]);
+		
+		if(!password_verify($_POST['password'], $db_pass[0])){
+			$errors['wrong_pass'] = "Wrong Password";
+		}
 	}
 
-	if(!password_verify($_POST['password'], $db_pass[0])){
-		$errors['wrong_pass'] = "Wrong Password";
-	}
+	
 
 	if(empty($errors)){
 		$_SESSION["user_id"] = $user[0];
