@@ -8,16 +8,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="theme-color" content="#000000">
 	<title>Bobby Bubonic and the Plague</title>
 	<link href='https://fonts.googleapis.com/css?family=Hind' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/normilize.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/store_page.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">	
 	<link rel="stylesheet" href="bower_components/vex/css/vex.css">
 	<link rel="stylesheet" href="bower_components/vex/css/vex-theme-wireframe.css">
 	<link rel="stylesheet" href="bower_components/growl/stylesheets/jquery.growl.css">
+	<link rel="stylesheet" href="css/store_page.css">
 </head>
 <body>
 
@@ -47,6 +48,24 @@
 				<li><a href="music.html">MUSIC</a></li>
 				<li><a class="active-link" href="store.php">STORE</a></li>
 				<li><a href="about.html">ABOUT</a></li>
+				<div class="drop-controls-wrapper">
+					<ul class="drop-controls">
+						<?php
+							if(isset($_SESSION["user_id"])) {
+								echo "
+									<li><a href='#'><i class='fa fa-user'></i> MY ACCOUNT</a></li>
+									<li class='drop-cart'><a href='#'><i class='fa fa-shopping-cart'></i> MY CART</a></li>
+									<li class='drop-sign-out'><a href='#'><i class='fa fa-sign-out'></i> SIGN OUT</a></li>
+								";
+							} else {
+								echo "
+									<li class='drop-sign-in'><a href='#'><i class='fa fa-sign-in'></i> SIGN IN</a></li>
+									<li class='drop-sign-up'><a href='#'><i class='fa fa-user-plus'></i> SIGN UP</a></li>
+								";
+							}
+						?>
+					</ul>
+				</div>				
 			</ul>
 		</nav><!-- end of nav#primary-navigation-->
 
@@ -136,8 +155,8 @@
 		<script src="bower_components/vex/js/vex.dialog.js"></script>
 		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
 		<script src="bower_components/growl/javascripts/jquery.growl.js"></script>
-		<!-- Sign up scrip gotta go first -->
 		
+		<script src="js/script.js"></script>
 		<script src="js/store/sign-up.js"></script>
 		<script src="js/store/sign-in.js"></script>
 		<script src="js/store/sign-out.js"></script>

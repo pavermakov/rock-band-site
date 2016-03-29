@@ -28,6 +28,7 @@
 		.profile-img-wrapper {
 			width: 100%;
 			float: left;
+
 			.profile-img-holder {
 				
 				margin: 0;
@@ -40,10 +41,9 @@
 
 		.thumbnails-wrapper {
 			width: 100%;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-
+			@include display-flex;
+			@include flex-direction(row);
+			@include justify-content(space-between);
 
 			.thumbnail {
 				flex-basis: 176px;

@@ -1,12 +1,18 @@
 var Cart = (function(){
 
-	function _loadCartView() {
-		console.info('Loading cart!');
-		$('#main-wrapper').load('views/store/cart.php');
+	function _loadCartView(callback) {
+
+		return function(e){
+			$('#main-wrapper').load('views/store/cart.php');
+
+			if(callback){
+				callback();
+			}
+		}
+		
 	}
 
 	function _loadStoreView() {
-		console.info('Loading store');
 		$('#main-wrapper').load('store.php .product-list');
 	}
 
@@ -32,7 +38,7 @@ var Cart = (function(){
 					dataType: 'json'
 				}).done(function(data){
 					if(data.success){
-						_loadCartView();
+						(_loadCartView())();
 					}
 				});	
 			}
@@ -41,8 +47,13 @@ var Cart = (function(){
 		
 	}
 
+	function _closeDropNav(){
+		$('#drop-navigation').toggleClass('nav-expanded');
+	}
+
 	function addEventListeners(){
-		$('.store-controls').on('click', '.my-cart', _loadCartView);
+		$('.store-controls').on('click', '.my-cart', _loadCartView());
+		$('#drop-navigation').on('click', '.drop-cart', _loadCartView(_closeDropNav));
 		$('#main-wrapper')
 			.on('click', '.back-to-store', _loadStoreView)
 			.on('click', '.remove-from-cart', _removeFromCart);

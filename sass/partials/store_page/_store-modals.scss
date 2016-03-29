@@ -87,11 +87,10 @@
 	}
 
 	.size-picker {		
-		display: flex;
-		flex-direction: row;	
-		align-items: center;	
+		@include display-flex;
+		@include flex-direction(row);	
+		@include align-items(center);
 		margin-top: 1.3rem;
-		
 		font-weight: bold;
 
 		.size-title {
@@ -102,9 +101,9 @@
 
 		.product-sizes {
 			flex-grow: 3;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
+			@include display-flex;
+			@include flex-direction(row);
+			@include justify-content(space-between);
 			font-size: 3rem;
 			color: $middle-gray;
 
@@ -125,9 +124,9 @@
 	}
 
 	.quantity-picker {
-		display: flex;
-		flex-direction: row;	
-		align-items: center;	
+		@include display-flex;
+		@include flex-direction(row);
+		@include align-items(center);	
 		margin-top: 1.7rem;
 
 		.quantity-title {
@@ -138,12 +137,11 @@
 		}
 
 		.quantity-controls {
-			flex-grow: 3;
-			
-			display: flex;
-			flex-direction: row;
-			justify-content: flex-end;
-			align-items: center;
+			flex-grow: 3;		
+			@include display-flex;
+			@include flex-direction(row);
+			@include justify-content(flex-end);
+			@include align-items(center);
 			font-size: 3rem;
 
 			.total-quantity {
@@ -165,10 +163,9 @@
 	}
 
 	.button-container {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-
+		@include display-flex;
+		@include flex-direction(row);
+		@include justify-content(flex-end);
 		margin-top: 1.7rem;
 
 		button {
@@ -185,5 +182,17 @@
 }
 
 .growl.growl-default{
-	background-color: black !important;
+	background-color: black;
+}
+
+.growl .growl-message{
+	font-size: 1.5rem;
+	margin-left: 27px;
+	font-weight: bold;
+}
+
+@media only screen and (max-width:790px){
+	.vex.vex-theme-wireframe{
+		padding-top: 30px;
+	}
 }

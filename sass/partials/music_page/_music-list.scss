@@ -11,10 +11,10 @@ section#song-list{
 
   section.songs {
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(space-between)
+    @include flex-wrap(wrap);
 
     article.song{
       flex-basis: 300px;

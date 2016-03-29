@@ -20,8 +20,11 @@
 			padding: 12px 10px;
 			border-top: 1px solid #373737;
 
-			&:hover a{
+			&:hover{
 				cursor: pointer;
+			}
+
+			&:hover a{
 				color: rgba($nav-font-color, 1);
 			}
 

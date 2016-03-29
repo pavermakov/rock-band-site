@@ -1,18 +1,23 @@
 /* Mixins */
 
+@mixin display-flex{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin flex-wrap($value){
+	-webkit-flex-wrap: $value;
+	flex-wrap: $value;
+}
+
 @mixin flex-direction($direction){
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: $direction;
 	-ms-flex-direction: $direction;
 	flex-direction: $direction;
-}
-
-@mixin display-flex(){
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
 }
 
 @mixin align-items($align){

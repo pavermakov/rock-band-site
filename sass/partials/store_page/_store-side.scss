@@ -6,12 +6,10 @@
 
 		.control {
 			display: inline-block;
-			// border-bottom: 2px solid transparent;
 			margin-bottom: 15px;
 
 			&:hover {
 				cursor: pointer;
-				// outline-bottom: 2px solid $dark-gray;
 				color: $dark-gray;
 			}
 			
@@ -36,7 +34,7 @@
 			margin-right: 11px;
 		}
 
-		.fa-sign-out { // Log out
+		.fa-sign-out {
 			position: relative;
 			left: 3px;
 			margin-right: 11px;
@@ -57,11 +55,10 @@
 	}
 
 	.social-links {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		align-items: center;
-
+		@include display-flex;
+		@include flex-direction(row);
+		@include justify-content(space-around);
+		@include align-items(center);
 		margin-top: 25px;
 	}
 	
@@ -82,9 +79,9 @@
 			.controls {
 				position: relative;
 				top: -3px;
-				display: flex;
-				flex-direction: row;
-				justify-content: flex-start;	
+				@include display-flex;
+				@include flex-direction(row);
+				@include justify-content(flex-start);	
 
 				.control {
 					margin-right: 30px;

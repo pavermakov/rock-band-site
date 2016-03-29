@@ -24,10 +24,7 @@ article.post{
 	.article-content{
 		@include article-design;
 
-
-
 		figure{
-
 			margin: 0 0 15px 0;
 
 			.article-image{

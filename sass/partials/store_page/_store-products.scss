@@ -1,14 +1,13 @@
 .product-list {
 	@include display-flex;
-	flex-wrap: wrap;
+	@include flex-wrap(wrap);
 	@include justify-content(space-between);
 
 	.product-item {
 		padding: 15px 2%;
 		flex-grow: 1;
 		flex-shrink: -1;
-		max-width: 33%;
-		
+		max-width: 33%;	
 
 		figure {
 			margin: 0;
