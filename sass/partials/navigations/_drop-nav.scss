@@ -1,0 +1,35 @@
+#drop-navigation{
+	//- hidden by default on mobile devices
+	@media only screen and (min-width:790px){
+		display: none;
+	}
+
+	@include transition(max-height, 0.2s, ease-out);
+	max-height: 0px;
+	background-color: $nav-background;
+	font-size: 2rem;
+	color: $nav-font-color;
+	overflow: hidden;
+
+
+	ul{
+		margin:0;
+		padding:0;
+
+		li{
+			padding: 12px 10px;
+			border-top: 1px solid #373737;
+
+			&:hover a{
+				cursor: pointer;
+				color: rgba($nav-font-color, 1);
+			}
+
+			a {
+				cursor: pointer;
+				color: $nav-font-color;
+				@include link-reset;
+			}
+		}
+	}
+}

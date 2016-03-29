@@ -41,6 +41,15 @@
 
 		</header>		
 
+		<nav id="drop-navigation" role="navigation">
+			<ul>
+				<li><a href="index.html">NEWS</a></li>
+				<li><a href="music.html">MUSIC</a></li>
+				<li><a class="active-link" href="store.php">STORE</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+			</ul>
+		</nav><!-- end of nav#primary-navigation-->
+
 		<main id="main-content" role="main">
 
 			<aside id="info-panel" class="side-bar">

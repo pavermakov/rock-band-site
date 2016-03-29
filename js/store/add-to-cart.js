@@ -35,9 +35,44 @@ var Add_to_cart = (function(){
 
 	function _showNotification(props) {
 
+		function _getFullSize(char){
+
+			var fullSize;
+
+			switch (char){
+				case 'XS':
+					fullSize = 'Extra Small';
+					break;
+				case 'S':
+					fullSize = 'Small';
+					break;
+				case 'M':
+					fullSize = 'Medium';
+					break;
+				case 'L':
+					fullSize = 'Large';
+					break;
+				case 'XL':
+					fullSize = 'Extra Large';
+					break;
+			}
+
+			return fullSize;
+		}
+
+		function _getItem(item){
+			if(+item === 1){
+				return "item";
+			} else {
+				return "items";
+			}
+		}
+
+		_getItem(props.amount)
+
 		$.growl({ 
-			title: "<i class='fa fa-shopping-cart'></i> New item added", 
-			message: props.amount + " x " + props.name,
+			title: "<i class='fa fa-shopping-cart'></i> New " + _getItem(props.amount) + " added", 
+			message: props.amount + " x " + _getFullSize(props.size) + " " + props.name,
 			location: 'br',
 			size: 'large'
 		});
