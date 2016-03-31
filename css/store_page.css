@@ -239,7 +239,22 @@ html {
     position: relative;
     left: 3px;
     margin-right: 9px; }
-  #info-panel .social-links {
+
+.social-links {
+  margin-top: 25px; }
+  .social-links a {
+    color: #5b5b5b; }
+    .social-links a .fa-facebook-square:hover {
+      color: #3765A3; }
+    .social-links a .fa-twitter:hover {
+      color: #5EA9DD; }
+    .social-links a .fa-soundcloud:hover {
+      color: #F97C10; }
+    .social-links a .fa-star:hover {
+      color: #E43526; }
+    .social-links a:hover {
+      cursor: pointer; }
+  .social-links ul {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -249,15 +264,20 @@ html {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: space-around;
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: space-around;
-    justify-content: space-around;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-top: 25px; }
+    -webkit-box-pack: space-around;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: space-around;
+    justify-content: space-around;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+    .social-links ul li {
+      margin: 0 7%; }
 
 @media only screen and (max-width: 1170px) {
   #info-panel {
@@ -677,3 +697,52 @@ html {
   color: white;
   text-align: center;
   font-size: 1.5rem; }
+
+#page-footer .social-links {
+  display: none;
+  max-width: 50%;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 2rem; }
+  #page-footer .social-links a {
+    color: nav-font-color; }
+    #page-footer .social-links a .fa-facebook-square:hover {
+      color: #3765A3; }
+    #page-footer .social-links a .fa-twitter:hover {
+      color: #5EA9DD; }
+    #page-footer .social-links a .fa-soundcloud:hover {
+      color: #F97C10; }
+    #page-footer .social-links a .fa-star:hover {
+      color: #E43526; }
+    #page-footer .social-links a:hover {
+      cursor: pointer; }
+  #page-footer .social-links ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: space-between;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+    #page-footer .social-links ul li {
+      margin: 0 7%; }
+
+@media only screen and (max-width: 790px) {
+  #page-footer .social-links {
+    display: block;
+    max-width: 100%; } }

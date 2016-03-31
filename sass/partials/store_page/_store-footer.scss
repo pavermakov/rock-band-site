@@ -1,0 +1,20 @@
+#page-footer{
+	.social-links {
+		display: none;
+		@include social-links(nav-font-color, space-between);
+		max-width: 50%;
+		margin: 0 auto;
+		margin-top: 25px;
+		margin-bottom: 25px;
+		font-size: 2rem;
+	}
+}
+
+@media only screen and (max-width:790px){
+	#page-footer{
+		.social-links {
+			display: block;
+			max-width: 100%;
+		}
+	}
+}

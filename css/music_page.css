@@ -253,10 +253,6 @@ section#song-list {
   float: left;
   padding: 0;
   font-size: 2rem; }
-  @media only screen and (min-width: 790px) {
-    #social-box {
-      width: 240px;
-      border-left: 1px solid #373737; } }
   #social-box a {
     color: rgba(246, 246, 246, 0.6); }
     #social-box a .fa-facebook-square:hover {
@@ -293,6 +289,10 @@ section#song-list {
     list-style: none; }
     #social-box ul li {
       margin: 0 7%; }
+  @media only screen and (min-width: 790px) {
+    #social-box {
+      width: 240px;
+      border-left: 1px solid #373737; } }
 
 .side-bar {
   margin-top: 25px; }

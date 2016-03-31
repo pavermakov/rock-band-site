@@ -65,7 +65,8 @@
 							}
 						?>
 					</ul>
-				</div>				
+				</div>	
+
 			</ul>
 		</nav><!-- end of nav#primary-navigation-->
 
@@ -106,10 +107,28 @@
 				</div>
 
 				<div class="social-links side-content-wrapper">
-					<i class="fa fa-facebook-square"></i>
-					<i class="fa fa-twitter"></i>
-					<i class="fa fa-soundcloud"></i>
-					<i class="fa fa-star"></i>
+					<ul>
+						<li>
+							<a href="https://www.facebook.com/bobbybubonicandplague" target="_blank">
+								<i class="fa fa-facebook-square"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/andtheplague" target="_blank">
+								<i class="fa fa-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://soundcloud.com/bobbybubonic" target="_blank">
+								<i class="fa fa-soundcloud"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.reverbnation.com/bobbybubonicandtheplague" target="_blank">
+								<i class="fa fa-star"></i>
+							</a>
+						</li>
+					</ul>
 				</div>
 
 				<div class="clearfix"></div>
@@ -143,7 +162,31 @@
 			
 		</main>
 
-		<footer id="page-footer">		
+		<footer id="page-footer">	
+			<div class="social-links side-content-wrapper">
+				<ul>
+					<li>
+						<a href="https://www.facebook.com/bobbybubonicandplague" target="_blank">
+							<i class="fa fa-facebook-square"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/andtheplague" target="_blank">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://soundcloud.com/bobbybubonic" target="_blank">
+							<i class="fa fa-soundcloud"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.reverbnation.com/bobbybubonicandtheplague" target="_blank">
+							<i class="fa fa-star"></i>
+						</a>
+					</li>
+				</ul>
+			</div>				
 			BOBBY BUBONIC &copy; THE PLAGUE 2016 <br> ALL RIGHTS RESERVED
 		</footer>
 

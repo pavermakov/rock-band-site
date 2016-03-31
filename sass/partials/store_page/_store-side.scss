@@ -53,15 +53,12 @@
 		}
 
 	}
-
-	.social-links {
-		@include display-flex;
-		@include flex-direction(row);
-		@include justify-content(space-around);
-		@include align-items(center);
-		margin-top: 25px;
-	}
 	
+}
+
+.social-links {
+	@include social-links($middle-gray, space-around);
+	margin-top: 25px;
 }
 
 @media only screen and (max-width:1170px){
