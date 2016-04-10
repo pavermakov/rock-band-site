@@ -1,4 +1,4 @@
-var View_product = (function(Buy_now){
+var View_product = (function(){
 
 	var dialogReady = false;
 
@@ -184,7 +184,7 @@ var View_product = (function(Buy_now){
 						.html('buy now');
 
 					// add event listeners for this button
-					Buy_now.init($(orderButton));
+					//Buy_now.init($(orderButton));
 
 					return $(orderButton);
 				}
@@ -199,7 +199,7 @@ var View_product = (function(Buy_now){
 
 					// add event listeners for this button
 
-					Add_to_cart.init($(cart));
+					Cart_Action.init($(cart));
 
 					return $(cart);
 				}
@@ -268,6 +268,6 @@ var View_product = (function(Buy_now){
 		ready: isDialogReady,
 		init: addEventListener
 	}
-}(Buy_now));
+}());
 
 View_product.init();

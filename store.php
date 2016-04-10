@@ -202,11 +202,10 @@
 		<script src="js/script.js"></script>
 		<script src="js/store/sign-up.js"></script>
 		<script src="js/store/sign-in.js"></script>
-		<script src="js/store/sign-out.js"></script>
-		<script src="js/store/buy-now.js"></script>
-		<script src="js/store/add-to-cart.js"></script>
+		<script src="js/store/sign-out.js"></script>	
+		<script src="js/store/cart-action.js"></script>
 		<script src="js/store/view-product.js"></script>
-		<script src="js/store/cart.js"></script>
+		<script src="js/store/cart-view.js"></script>
 		
 	</div><!-- end of #container -->
 

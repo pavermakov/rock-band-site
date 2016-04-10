@@ -5,7 +5,6 @@
 		h2 {
 			text-align: center;
 			font-size: 2.5rem;
-			margin-top: 0;
 		}
 	}
 
@@ -98,23 +97,42 @@
 			letter-spacing: 1.5px;
 		}
 
-		.btn-checkout {
+		.cart-btn {
 			font-size: 1.8rem;
-			float: right;
-			color: $light-gray;
-			background-color: #5b5b5b;
-			border: 2px solid #b7b7b7;
+			
 			padding: 1px 10px;
 			transition: all 0.1s ease-in;
 			border-radius: 2px;
 			font-family: $article-font;
-			margin-right: 2%;
+			
 			letter-spacing: 1px;
+			border: 2px solid #b7b7b7;
 
 			&:hover {
 				cursor: pointer;
 				border-color: #5b5b5b;
 			}
+		}
+
+		.cart-btn-left {
+			float: right;
+			margin-right: 2%;
+		}
+
+		.cart-btn-center {
+			float: none;
+			display: block;
+			min-width: 33.333%;
+			margin: 0 auto;
+		}
+
+		.btn-back-to-store{
+			background-color: transparent;
+		}
+
+		.btn-checkout {			
+			color: $light-gray;
+			background-color: #5b5b5b;
 		}
 	}
 
@@ -175,11 +193,15 @@
 				text-align: center;
 			}
 
-			.btn-checkout{
+			.cart-btn{
 				float: none;
 				display: block;
-				max-width: 33.333%;
+				min-width: 33.333%;
 				margin: 0 auto;
+			}
+
+			.btn-back-to-store {
+				margin-top: 15px;
 			}
 		}
 	}

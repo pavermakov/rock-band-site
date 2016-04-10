@@ -4,11 +4,7 @@
 
 <section id="cart">
 	<header class="cart-header">
-		<div class="back-to-store">
-			<i class="fa fa-angle-double-left"></i> Back to store
-		</div>
 		<h2>Your Cart</h2>
-
 	</header>
 
 	<section class="cart-wrapper">
@@ -44,8 +40,15 @@
 			echo "
 				<div class='checkout'>
 					<h2>Total: $". $total_sum ."</h2>
-					<button class='btn-checkout' type='button'>Checkout</button>
+					<button class='cart-btn cart-btn-left btn-checkout' type='button'>Checkout</button>
+					<button class='cart-btn cart-btn-left btn-back-to-store' type='button'>Back to store</button>
 					<div class='clearfix'></div>
+				</div>
+			";
+		} else {
+			echo "
+				<div class='checkout'>
+					<button class='cart-btn cart-btn-center btn-back-to-store' type='button'>Back to store</button>
 				</div>
 			";
 		}

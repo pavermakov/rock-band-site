@@ -1,4 +1,4 @@
-var Add_to_cart = (function(){
+var Cart_Action = (function(){
 
 	var _productProperties;
 
@@ -33,13 +33,48 @@ var Add_to_cart = (function(){
 		});
 	}
 
+	function _removeFromCart(){
+
+		var self = this;
+
+		vex.dialog.confirm({
+			message: "Are you sure?",
+			callback: _removeFromDb
+		});
+
+		function _removeFromDb(conf){
+			if(conf) {
+				var data = {
+					id: +$(self).closest('.cart-item').data('order-id')
+				}
+				
+				$.ajax({
+					type: 'POST',
+					url: 'php_scripts/db/remove_cart_item.php',
+					data: data,
+					dataType: 'json'
+				}).done(function(data){
+					if(data.success){
+						(_loadCartView())();
+					}
+				});	
+			}
+			
+		};
+		
+	}
+
 	function _showNotification(props) {
 
-		function _getFullSize(char){
+		function _getFullSize(size){
+
+			if(!size){
+				return '';
+			}
 
 			var fullSize;
 
-			switch (char){
+			switch (size){
 				case 'XS':
 					fullSize = 'Extra Small';
 					break;
@@ -68,7 +103,7 @@ var Add_to_cart = (function(){
 			}
 		}
 
-		_getItem(props.amount)
+		_getItem(props.amount);
 
 		$.growl({ 
 			title: "<i class='fa fa-shopping-cart'></i> New " + _getItem(props.amount) + " added", 
@@ -108,6 +143,7 @@ var Add_to_cart = (function(){
 
 	function addEventListeners($button) {		
 		$button.click(_isUserOnline);
+		$('#main-wrapper').on('click', '.remove-from-cart', _removeFromCart);
 	}
 
 	return {

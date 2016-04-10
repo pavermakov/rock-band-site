@@ -31,7 +31,6 @@ var Sign_up = (function(){
 	}
 
 	function _openSignUpModal(callback) {
-		console.log('Signing up');
 
 		return function(e){
 			function _emergencyEventListener(dialog) {
