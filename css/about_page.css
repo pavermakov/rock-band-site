@@ -27,8 +27,17 @@ html {
 .hidden {
   display: none; }
 
+.visible {
+  display: block; }
+
 .full-width {
   width: 100% !important; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
 
 .active-link {
   color: #f6f6f6 !important; }

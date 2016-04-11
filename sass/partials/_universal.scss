@@ -35,8 +35,20 @@ html {
 	display: none;
 }
 
+.visible {
+	display: block;
+}
+
 .full-width{
 	width:100% !important;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
 }
 
 .active-link{

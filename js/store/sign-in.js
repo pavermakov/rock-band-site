@@ -77,7 +77,7 @@ var Sign_in = (function(){
 	      			$.growl({ 
 								title: "<i class='fa fa-sign-in'></i> Now signed in", 
 								message: "Welcome!",
-								location: 'br',
+								location: 'bl',
 								size: 'large'
 							});
 	        	}

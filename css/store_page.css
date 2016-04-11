@@ -27,8 +27,17 @@ html {
 .hidden {
   display: none; }
 
+.visible {
+  display: block; }
+
 .full-width {
   width: 100% !important; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
 
 .active-link, #store-header ul.full-nav li:hover a {
   color: #f6f6f6 !important; }
@@ -36,6 +45,50 @@ html {
 @media only screen and (min-width: 740px) {
   .animsition-loading {
     margin-top: 6%; } }
+
+.store-btns {
+  margin-top: 40px; }
+  .store-btns h2 {
+    font-family: "Hind",sans-serif;
+    display: inline;
+    font-size: 2.5rem;
+    margin-left: 2%;
+    letter-spacing: 1.5px; }
+  .store-btns .cart-btn {
+    font-size: 1.8rem;
+    padding: 1px 10px;
+    transition: all 0.1s ease-in;
+    border-radius: 2px;
+    font-family: "Hind", sans-serif;
+    letter-spacing: 1px;
+    border: 2px solid #b7b7b7; }
+    .store-btns .cart-btn:hover {
+      cursor: pointer;
+      border-color: #5b5b5b; }
+  .store-btns .cart-btn-left {
+    float: right;
+    margin-right: 2%; }
+  .store-btns .cart-btn-center {
+    float: none;
+    display: block;
+    min-width: 33.333%;
+    margin: 0 auto; }
+  .store-btns .btn-light {
+    background-color: transparent; }
+  .store-btns .btn-dark {
+    color: #efefef;
+    background-color: #5b5b5b; }
+
+@media only screen and (max-width: 550px) {
+  .store-btns h2 {
+    display: block;
+    text-align: center; }
+  .store-btns .cart-btn {
+    float: none;
+    display: block;
+    min-width: 33.333%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem; } }
 
 #store-header {
   height: 98px;
@@ -448,39 +501,6 @@ html {
     font-family: "Hind",sans-serif;
     letter-spacing: 1.5px; }
 
-#cart .checkout {
-  margin-top: 20px; }
-  #cart .checkout h2 {
-    font-family: "Hind",sans-serif;
-    display: inline;
-    font-size: 2.5rem;
-    margin-left: 2%;
-    letter-spacing: 1.5px; }
-  #cart .checkout .cart-btn {
-    font-size: 1.8rem;
-    padding: 1px 10px;
-    transition: all 0.1s ease-in;
-    border-radius: 2px;
-    font-family: "Hind", sans-serif;
-    letter-spacing: 1px;
-    border: 2px solid #b7b7b7; }
-    #cart .checkout .cart-btn:hover {
-      cursor: pointer;
-      border-color: #5b5b5b; }
-  #cart .checkout .cart-btn-left {
-    float: right;
-    margin-right: 2%; }
-  #cart .checkout .cart-btn-center {
-    float: none;
-    display: block;
-    min-width: 33.333%;
-    margin: 0 auto; }
-  #cart .checkout .btn-back-to-store {
-    background-color: transparent; }
-  #cart .checkout .btn-checkout {
-    color: #efefef;
-    background-color: #5b5b5b; }
-
 #cart .empty-cart {
   font-size: 2rem;
   color: #777777;
@@ -504,17 +524,39 @@ html {
   #cart .cart-item {
     max-width: 100%; }
     #cart .cart-item .remove-from-cart {
-      right: 0.5% !important; }
-  #cart .checkout h2 {
-    display: block;
-    text-align: center; }
-  #cart .checkout .cart-btn {
-    float: none;
-    display: block;
-    min-width: 33.333%;
-    margin: 0 auto; }
-  #cart .checkout .btn-back-to-store {
-    margin-top: 15px; } }
+      right: 0.5% !important; } }
+
+#shipping-information .shipping-header h2 {
+  text-align: center;
+  font-size: 2.5rem; }
+
+#shipping-information .shipping-information {
+  max-width: 500px;
+  margin: 0 auto; }
+  #shipping-information .shipping-information h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem; }
+  #shipping-information .shipping-information input {
+    padding: 0.25em 0.67em;
+    min-height: 2.5em;
+    margin-bottom: 1rem;
+    font-family: "Hind", sans-serif;
+    font-weight: inherit;
+    font-size: 1.8rem;
+    border: 2px solid #000; }
+    #shipping-information .shipping-information input:focus {
+      border: 2px dashed #000;
+      outline: none; }
+  #shipping-information .shipping-information .error-field {
+    text-align: center;
+    font-size: 1.7rem;
+    color: #64260B;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+
+#shipping-information .half-width {
+  width: 49%; }
 
 .vex-overlay {
   background: rgba(255, 255, 255, 0.7) !important; }

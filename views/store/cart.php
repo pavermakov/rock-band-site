@@ -38,17 +38,17 @@
 	<?php
 		if(!empty($orders)){
 			echo "
-				<div class='checkout'>
+				<div class='store-btns'>
 					<h2>Total: $". $total_sum ."</h2>
-					<button class='cart-btn cart-btn-left btn-checkout' type='button'>Checkout</button>
-					<button class='cart-btn cart-btn-left btn-back-to-store' type='button'>Back to store</button>
+					<button class='cart-btn cart-btn-left btn-dark btn-checkout' type='button'>Checkout</button>
+					<button class='cart-btn cart-btn-left btn-light btn-back-to-store' type='button'>Back to store</button>
 					<div class='clearfix'></div>
 				</div>
 			";
 		} else {
 			echo "
-				<div class='checkout'>
-					<button class='cart-btn cart-btn-center btn-back-to-store' type='button'>Back to store</button>
+				<div class='store-btns'>
+					<button class='cart-btn cart-btn-center btn-light btn-back-to-store' type='button'>Back to store</button>
 				</div>
 			";
 		}

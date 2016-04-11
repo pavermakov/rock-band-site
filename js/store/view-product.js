@@ -199,7 +199,7 @@ var View_product = (function(){
 
 					// add event listeners for this button
 
-					Cart_Action.init($(cart));
+					Store_Action.init($(cart));
 
 					return $(cart);
 				}
