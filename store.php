@@ -194,6 +194,7 @@
 
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+		<script src="bower_components/jquery.payment/lib/jquery.payment.js"></script>
 		<script src="bower_components/vex/js/vex.js"></script>
 		<script src="bower_components/vex/js/vex.dialog.js"></script>
 		<script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
@@ -206,6 +207,13 @@
 		<script src="js/store/store-view.js"></script>
 		<script src="js/store/store-action.js"></script>
 		<script src="js/store/view-product.js"></script>		
+		
+
+		<!-- Payment -->
+		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+		<script type="text/javascript">
+			Stripe.setPublishableKey('pk_test_odKqYVFQCBjp3ZoQcyqFuvkc');
+		</script>
 		<script src="js/store/payment.js"></script>
 
 	</div><!-- end of #container -->

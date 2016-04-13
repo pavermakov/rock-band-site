@@ -101,16 +101,6 @@
 			<div class="table-row-item-medium final-price">$ <?php echo $final_price ?></div>
 		</div>
 
-		<form action="" method="POST">
-		  <script
-		    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-		    data-key="pk_test_odKqYVFQCBjp3ZoQcyqFuvkc"
-		    data-amount="2000"
-		    data-name="Demo Site"
-		    data-locale="auto">
-		  </script>
-		</form>
-
 	</section>
 
 	<div class='store-btns'>
