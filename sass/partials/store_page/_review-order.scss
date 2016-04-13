@@ -1,0 +1,112 @@
+#review-order {
+
+
+	h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		color: $middle-gray;
+	}
+
+	.table {
+		display: flex;
+		align-content: space-around;
+		flex-direction: column;
+		padding: 15px 2%;
+		color: #2D2D2D !important;
+	}
+
+	.table-header {
+		font-size: 2.2rem;
+		background-color: $middle-gray;
+		text-transform: uppercase;
+
+		[class*="table-row"]{
+			padding-top: 1.2rem;
+			padding-bottom: 1.2rem;
+			color: white;
+			font-weight: bold;
+			border-bottom: none !important;
+		}
+	}
+
+	.table-content {
+		background-color: $light-gray;
+	}
+
+	.table-summary {
+		justify-content: flex-end;
+
+		[class*="table-row"]{
+			padding-top: 1.2rem;
+			padding-bottom: 1.2rem;
+		}
+	}
+
+	.table-row {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+
+		[class*="table-row"]{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: $side-font-size;
+			font-family: $article-font;
+			flex-shrink: 1;
+			border-left: 2px solid $li-mi-gray;
+
+			&:last-child{
+				border-right: 2px solid $li-mi-gray;
+			}
+
+			&:not(.item-hidden){
+				border-bottom: 2px solid $li-mi-gray;
+			}
+		}
+
+		.table-row-item {
+			flex-basis: 25%;
+			flex-grow: 2;			
+		}
+
+		.table-row-item-medium{
+			flex-basis: 5%;	
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+
+
+		.item-hidden {
+			// I want to remove background and border from this element
+			background-color: white;
+			border-left: none !important;
+		}
+
+		.final-price {
+			font-size: 2.2rem;
+			font-weight: bold;
+		}
+	}
+
+	.table-address{
+			
+			[class*="table-row"]{
+				padding-top: 1.2rem;
+				padding-bottom: 1.2rem;
+			}	
+		}
+
+	.small-image{
+		padding: 1rem;
+		margin: 0;
+		display: flex;
+		align-items: center;
+
+		img{
+			width: 100%;
+		}
+	}
+
+}

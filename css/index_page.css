@@ -27,6 +27,12 @@ html {
 .hidden {
   display: none; }
 
+.upcase {
+  text-transform: uppercase; }
+
+.text-bold {
+  font-weight: bold; }
+
 .visible {
   display: block; }
 
@@ -41,10 +47,6 @@ html {
 
 .active-link {
   color: #f6f6f6 !important; }
-
-@media only screen and (min-width: 740px) {
-  .animsition-loading {
-    margin-top: 6%; } }
 
 #main-content #ads {
   width: 23%;

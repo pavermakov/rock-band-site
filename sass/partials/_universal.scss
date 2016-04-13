@@ -35,6 +35,14 @@ html {
 	display: none;
 }
 
+.upcase {
+	text-transform: uppercase;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
 .visible {
 	display: block;
 }
@@ -50,13 +58,6 @@ html {
 .float-right {
 	float: right;
 }
-
 .active-link{
 	color: rgba($nav-font-color, 1) !important;
-}
-
-@media only screen and (min-width: 740px){
-	.animsition-loading{
-		margin-top: 6%;
-	}
 }

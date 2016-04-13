@@ -5,6 +5,7 @@
 		h2 {
 			text-align: center;
 			font-size: 2.5rem;
+			color: $middle-gray;
 		}
 	}
 
@@ -15,6 +16,7 @@
 		h3 {
 			font-size: 2.2rem;
 			margin-bottom: 1rem;
+			color: $middle-gray;
 		}
 
 		input {
@@ -24,6 +26,7 @@
 	    font-family: $article-font;
     	font-weight: inherit;
     	font-size: 1.8rem;
+    	color: $middle-gray;
 			border: 2px solid #000;
 
 			&:focus{

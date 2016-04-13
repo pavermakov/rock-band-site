@@ -1,4 +1,7 @@
 <?php
+	if(!isset($_SESSION)) { 
+    session_start(); 
+}
 	require_once("../../php_scripts/db/get_user_info.php");
 	if(!empty($user)){
 		$user = $user[0];
@@ -9,11 +12,7 @@
 	
 	<header class="shipping-header">
 		
-		<h2>Shipping Information</h2>
-
-		<?php 
-				
-		?>
+		<h2><i class="fa fa-truck" aria-hidden="true"></i> Shipping Information</h2>
 
 	</header>
 
@@ -34,7 +33,7 @@
 				<input class="half-width float-left" type="text" value="<?php echo $user['city'] ?>" name="city" placeholder="City">
 				<input class="half-width float-right" type="text" name="province" value="<?php echo $user['province'] ?>" placeholder="State / Province">
 				<input class="half-width float-left" type="text" name="country" value="<?php echo $user['country'] ?>" placeholder="Country">
-				<input class="half-width float-right" type="text" name="zip" value="<?php echo $user['zip'] ?>" placeholder="Zip code">
+				<input class="half-width float-right" type="text" name="zip" value="<?php echo $user['zip'] ?>" placeholder="Zip (min. 4)">
 				<div class="clearfix"></div>
 			</div>	
 

@@ -1,13 +1,15 @@
 <?php
+	
 	require_once("../../php_scripts/db/get_cart_orders.php");
 ?>
 
 <section id="cart">
 	<header class="cart-header">
-		<h2>Your Cart</h2>
+		<h2><i class='fa fa-shopping-cart'></i> Your Cart</h2>
 	</header>
 
 	<section class="cart-wrapper">
+
 		<?php
 			if(!empty($orders)){
 				foreach ($orders as $order) {

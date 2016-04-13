@@ -6,13 +6,11 @@ var Store_Action = (function(Store_View){
 		rules: {
 			first_name: {
 				required: true,
-				minlength: 2,
-				digits: false
+				minlength: 2
 			},
 			last_name: {
 				required: true,
-				minlength: 2,
-				digits: false
+				minlength: 2
 			},
 			address: {
 				required: true,
@@ -20,22 +18,20 @@ var Store_Action = (function(Store_View){
 			},
 			city: {
 				required: true,
-				minlength: 2,
-				digits: false
+				minlength: 2
 			},
 			province: {
 				required: true,
-				minlength: 2,
-				digits: false
+				minlength: 2
 			},
 			country: {	
 				required: true,
-				minlength: 2,
-				digits: false
+				minlength: 2
 			},
 			zip: {
 				required: true,
 				minlength: 4,
+				maxlength: 10,
 				digits: true
 			}
 
@@ -160,6 +156,7 @@ var Store_Action = (function(Store_View){
 		}
 
 		if(_validateAddressForm()){
+			console.log('form is valid')
 			_updateUserInfo(__getUserInfo());
 		}
 		
@@ -179,7 +176,10 @@ var Store_Action = (function(Store_View){
 		// updated in the database.
 
 		function __handleUserUpdate(data){
-			console.log(data);
+			if(data.success){
+				// load review screen
+				Store_View.loadReview();
+			}
 		}
 
 		$.ajax({
