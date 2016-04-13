@@ -32,7 +32,7 @@ if(empty($_POST["size"])){
 if(empty($_POST["price"])){
 	$error["price"] = "Price is empty";
 } else {
-	$order_price = $_POST["price"];
+	$order_price = number_format((float)$_POST["price"], 2, '.', '');
 }
 
 $order_status = "in cart";

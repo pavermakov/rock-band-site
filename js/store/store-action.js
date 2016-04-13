@@ -84,7 +84,7 @@ var Store_Action = (function(Store_View){
 		function _removeFromDb(conf){
 			if(conf) {
 				var data = {
-					id: +$(self).closest('.cart-item').data('order-id')
+					id: +$(self).data('order-id')
 				}
 				
 				$.ajax({
@@ -269,7 +269,7 @@ var Store_Action = (function(Store_View){
 
 	function addEventListenersToCart() {	
 		var $main_wrapper = $('#main-wrapper');
-		$main_wrapper.on('click', '.remove-from-cart', _removeFromCart);
+		$main_wrapper.on('click', '#remove-item', _removeFromCart);
 		$main_wrapper.on('click', '.btn-review-order', _submitAddressForm);
 		$main_wrapper.on('submit', '.shipping-form', _preventFromSubmitting);
 	}

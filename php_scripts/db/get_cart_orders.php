@@ -4,6 +4,9 @@ if(!isset($_SESSION)) {
 } 
 require_once("connect_db.php");
 
+$shipping = 8;
+$shipping = number_format((float)$shipping, 2, '.', '');
+
 $orders = $database->select("orders", [
 	"[><]products" => "product_id"
 ],[
@@ -29,4 +32,8 @@ $total_sum = $database->sum("orders", "order_price", [
 		"orders.order_status" => "in cart"
 	]
 ]);
+
+$total_sum = number_format((float)$total_sum, 2, '.', '');
+
+$final_price = $total_sum + $shipping;
 

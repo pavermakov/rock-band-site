@@ -14,9 +14,9 @@
 			if(!empty($orders)){
 				foreach ($orders as $order) {
 					echo "
-						<div class='cart-item' data-order-id='". $order["order_id"] ."'>
+						<div class='cart-item'>
 							<figure>
-								<i class='fa fa-times-circle remove-from-cart'></i>
+								<i id='remove-item' class='fa fa-times-circle remove-from-cart' data-order-id='". $order["order_id"] ."'></i>
 								<img src='". $order["product_image"] ."' alt='". $order["product_name"] ."'>
 								<figcaption>". $order["product_name"] ." (x". $order["order_amount"] .")</figcaption>
 							

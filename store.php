@@ -203,12 +203,11 @@
 		<script src="js/store/sign-up.js"></script>
 		<script src="js/store/sign-in.js"></script>
 		<script src="js/store/sign-out.js"></script>	
-
 		<script src="js/store/store-view.js"></script>
-		
 		<script src="js/store/store-action.js"></script>
 		<script src="js/store/view-product.js"></script>		
-		
+		<script src="js/store/payment.js"></script>
+
 	</div><!-- end of #container -->
 
 </body>

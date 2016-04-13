@@ -29,6 +29,17 @@ if(empty($errors)){
 
 	if($removed_item){
 		$data["success"] = true;
+		# i want to check if there are item lest in the cart
+		# and redirect to different pages depending on that
+		$items_left = $database->count("orders",[
+			"AND" => [
+				"user_id" => $user_id,
+				"order_status" => "in cart"
+			]
+		]);
+
+		$data["items_left"] = $items_left;
+
 	} else {
 		$data["success"] = false;
 		$data["errors"] = "Failed to remove an item.";
