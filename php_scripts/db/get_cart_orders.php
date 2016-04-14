@@ -37,3 +37,7 @@ $total_sum = number_format((float)$total_sum, 2, '.', '');
 
 $final_price = $total_sum + $shipping;
 
+function dollarToPenny($amount){
+	return $amount * 100;
+}
+

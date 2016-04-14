@@ -1,4 +1,4 @@
-var Payment = (function(){
+var Payment = (function(Store_View){
 
 	var _inputs = {
 		errors: '<div class="error-field"></div>',
@@ -66,45 +66,90 @@ var Payment = (function(){
 
 	    if(validation_result.errors.length === 0){
 	    	// clear errors if were any
-	    	$('.error-field').html('')
-	    	console.log(validation_result)
+	    	$('.error-field').html('');
 	    	Stripe.card.createToken(validation_result.data, _stripeResponseHandler);
 			} else {
 				// show card errors
-				// but first clear previous errors
-				var $error_field = $('.error-field').html('');
-				$.each(validation_result.errors, function(index, value){
-					$error_field.append("<p>"+ value +"</p>");
-				});
+				_displayErrors(validation_result.errors);
 			}
 		});
 	}
 
 	function _stripeResponseHandler(status, response){
 		// following the tutorial for Stripe.js
-		console.info(status);
-		console.log(response);
 		var $form = $('#payment-form');
 
 		if (response.error) {
 	    // Show the errors on the form
-	    $('.error-field').append("<p>" + response.error.message + "</p>");
+	    _displayErrors(response.error.message);
+	    // $('.error-field').append("<p>" + response.error.message + "</p>");
 	  } else {
 	    // response contains id and card, which contains additional card details
-	    var token = response.id;
-	    // Insert the token into the form so it gets submitted to the server
-	    $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-	    // and submit
-	    // $form.get(0).submit();
+	    var token = {
+	    	"stripeToken": response.id
+	    };
+	    // submit token to the server
+	    _charge(token);
+
 	  }
 
 	}
 
-	// function _validateCardNumber(){
-	// 	jQuery.validator.addMethod("my_card", function(value, element){
-	// 		return this.optional(element) || $.payment.validateCardNumber(value);
-	// 	}, "Please enter correct card number")
-	// }
+	function _charge(token) {
+		$.ajax({
+			type: 'POST',
+			url: 'php_scripts/misc/charge_card.php',
+			data: token,
+			dataType: 'json'
+		}).done(_chargeHandler);
+	}
+
+	function _chargeHandler(data){
+
+		function __successfulCharge(){
+			/// need to redirect somewhere + change order status
+			// changing order status:
+			_updateOrder();
+			_closeVex();
+			_showNotification(
+				'<i class="fa fa-check" aria-hidden="true"></i> Success', 
+				'We have received your payment!'
+			);
+		}
+
+		function __failedCharge(errors){
+			_displayErrors(errors);
+		}
+
+		if(data.charge.status === "succeeded"){
+			__successfulCharge();
+		} else {
+			__failedCharge(data.errors);
+		}
+	}
+
+	function _updateOrder(){
+
+		function __handleOrderUpdate(data){
+			
+			if(!data.errors){
+				// no errors, order type was switched
+				// 'in cart' => 'paid'
+				Store_View.loadStore();
+			} else {
+				_showNotification(
+					'<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error', 
+					'Failed to update database'
+				);
+			}
+		}
+
+		$.ajax({
+			type: "POST",
+			url: 'php_scripts/db/paid_order.php',
+			dataType: 'json'
+		}).done(__handleOrderUpdate);
+	}
 
 	function _validateCard(){
 		var validation = {
@@ -142,11 +187,45 @@ var Payment = (function(){
 		return validation;
 	}
 
+	function _showNotification(title, message, location, size){
+		_title = title || 'Growl title';
+		_message = message || 'Growl message',
+		_location = location || 'bl',
+		_size = size || 'large';
 
+		$.growl({
+			title: _title,
+			message: _message,
+			location: _location,
+			size: _size
+		});
+	}
+
+	function _displayErrors(errors){
+		// give it an array of errors and it will
+		// display them on the screen
+		var $error_field = $('.error-field').html('');
+
+		return (function(event){
+			// check if it is a string or an object
+			if(typeof errors === "string"){
+				$error_field.append("<p>"+ errors +"</p>")
+			} else {
+				$.each(errors, function(index, value){
+					$error_field.append("<p>"+ value +"</p>");
+				});
+			}
+			
+		})();
+	}
+
+	function _closeVex(){
+		// just closing the modal window
+		vex.close();
+	}
 
 	function addEventListeners() {
 		var $main_wrapper = $('#main-wrapper');
-
 		$main_wrapper.on('click', '.btn-pay', _openPaymentForm);
 	}
 
@@ -154,6 +233,6 @@ var Payment = (function(){
 		init: addEventListeners
 	}
 
-}());
+}(Store_View));
 
 Payment.init();
