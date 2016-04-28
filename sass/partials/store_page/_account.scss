@@ -1,0 +1,170 @@
+#account{
+
+	.my-heading{
+		font-size: 2.2rem;
+		background-color: $middle-gray;
+		text-transform: uppercase;	
+		color: white;
+		font-family: $article-font !important;
+		font-weight: bold;
+	}
+
+	h2{
+		text-align: center;
+		font-size: 2.5rem;
+		color: $middle-gray;
+	}
+
+	.table{
+		display: flex;
+		align-content: space-around;
+		flex-direction: column;
+		padding: 15px 2%;
+		color: #2D2D2D !important;
+
+		.table-header{
+			@extend .my-heading;
+
+			.table-row-item{
+				border-left: 2px solid $li-mi-gray;
+				padding-top: 1.2rem;
+				padding-bottom: 1.2rem;
+			}
+		}
+
+		.table-content{
+
+			.table-row-item {
+				border-left: 2px solid $li-mi-gray;
+				background-color: $light-gray;
+
+				&:last-child{
+					border-right: 2px solid $li-mi-gray;
+				}
+			}
+		}
+
+		.table-row{
+			display: flex;
+			flex-direction: row;
+			
+			&:not(:first-child){
+				border-bottom: 2px solid $li-mi-gray;
+			}
+
+		}
+
+		.table-row-item{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			// global one
+			font-family: $article-font !important;
+			font-size: $side-font-size;
+			text-align: center;
+			flex-grow: 1;
+
+		}
+
+		.item-small{
+			flex-basis: 10%;
+		}
+
+		.item-big{
+			flex-basis: 60%;
+		}
+	}
+
+	.list{
+		// Default settings
+		display: none;
+		width: 70%;
+		margin: 0 auto;
+
+		.list-item:not(:first-child) {
+			@extend .list-top-margin;
+		}
+
+		.list-header{
+			@extend .my-heading;
+
+		}
+
+		.list-item-row{
+			padding-top: 1.2rem;
+			padding-bottom: 1.2rem;
+			font-family: $article-font;
+			text-align: center;
+			// border-bottom: 2px solid $li-mi-gray;
+		}
+
+		.list-item-content {
+			font-size: $side-font-size + 0.5;		
+		}
+
+		.list-item-image {
+			margin: 0;
+			padding: 0;
+			border-bottom: 2px solid $li-mi-gray;
+			border-left: 2px solid $li-mi-gray;
+			border-right: 2px solid $li-mi-gray;
+
+			img{
+				width: 100%;
+				border-bottom: 2px solid $li-mi-gray;
+			}
+		}
+
+		.list-item-description{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			.list-item-row:not(:first-child){
+				border-top: 2px solid $li-mi-gray;
+			}
+
+			.list-item-quantity{
+				border-right: 2px solid $li-mi-gray;
+			}
+			
+			.list-big{
+				flex-basis: 100%;
+			}
+
+			.list-small {
+				flex-basis: 50%;
+			}
+		}
+	}
+
+}
+
+.list-top-margin{
+	margin-top: 25px;
+}
+
+.no-padding{
+	padding: 0 !important;
+}
+
+@media only screen and (max-width:989px){
+	// make another one that fits smaller screens
+	#account{
+		.table {
+			display: none;
+		}
+
+		.list{
+			display: block;
+		}
+	}
+}
+
+@media only screen and (max-width:789px){
+	#account{
+		.list{
+			width: 95%;
+		}
+	}
+}

@@ -1,4 +1,4 @@
-var Sign_out = (function(){
+var Sign_out = (function(Utilities){
 
 	function _signOut(callback) {
 
@@ -10,12 +10,11 @@ var Sign_out = (function(){
 				
 				_loadViews();
 
-				$.growl({ 
-					title: "<i class='fa fa-sign-out'></i> Now signed out", 
-					message: "Goodbye!",
-					location: 'br',
-					size: 'large'
-				});
+				Utilities.notify(
+					"<i class='fa fa-sign-out'></i> Now signed out",
+					"Goodbye!"
+				);
+
 			});
 
 			if(callback){
@@ -43,6 +42,6 @@ var Sign_out = (function(){
 	return {
 		init: addEventListeners
 	}
-}());
+}(Utilities));
 
 Sign_out.init();

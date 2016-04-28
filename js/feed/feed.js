@@ -23,10 +23,7 @@ $(function(){
         }
       });
 
-      // No jumping back to the previously scrolled position
-      $(window).on('beforeunload', function() {
-        $(window).scrollTop(0);
-      });
+      
 
     }
 

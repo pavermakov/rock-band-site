@@ -1,4 +1,4 @@
-#shipping-information {
+
 
 	.shipping-header {
 
@@ -17,6 +17,7 @@
 			font-size: 2.2rem;
 			margin-bottom: 1rem;
 			color: $middle-gray;
+			font-family: $article-font;
 		}
 
 		input {
@@ -50,4 +51,10 @@
 		width: 49%;
 	}
 
+
+
+@media only screen and (max-width:789px){
+	.shipping-information {
+		text-align: center;
+	}
 }

@@ -1,7 +1,7 @@
 <?php
 	if(!isset($_SESSION)) { 
     session_start(); 
-}
+	}
 	require_once("../../php_scripts/db/get_user_info.php");
 	if(!empty($user)){
 		$user = $user[0];

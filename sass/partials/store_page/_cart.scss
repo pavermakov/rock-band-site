@@ -89,16 +89,17 @@
 
 	
 
-	.empty-cart {
+	
+
+}
+
+.empty-cart {
 		font-size: 2rem;
 		color: $li-mi-gray;
 		font-weight: bold;
 		text-transform: uppercase;
+		text-align: center;
 	}
-
-}
-
-
 
 @media only screen and (max-width:940px){
 	#cart{

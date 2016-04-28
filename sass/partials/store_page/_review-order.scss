@@ -1,6 +1,5 @@
 #review-order {
 
-
 	h2 {
 		text-align: center;
 		font-size: 2.5rem;
@@ -29,9 +28,7 @@
 		}
 	}
 
-	.table-content {
-		background-color: $light-gray;
-	}
+	
 
 	.table-summary {
 		justify-content: flex-end;
@@ -55,6 +52,7 @@
 			font-family: $article-font;
 			flex-shrink: 1;
 			border-left: 2px solid $li-mi-gray;
+			text-align: center;
 
 			&:last-child{
 				border-right: 2px solid $li-mi-gray;
@@ -65,12 +63,12 @@
 			}
 		}
 
-		.table-row-item {
+		.table-row-item-large {
 			flex-basis: 25%;
 			flex-grow: 2;			
 		}
 
-		.table-row-item-medium{
+		.table-row-item-small{
 			flex-basis: 5%;	
 			flex-grow: 1;
 			flex-shrink: 1;
@@ -84,10 +82,7 @@
 			border-left: none !important;
 		}
 
-		.final-price {
-			font-size: 2.2rem;
-			font-weight: bold;
-		}
+		
 	}
 
 	.table-address{
@@ -98,15 +93,204 @@
 			}	
 		}
 
-	.small-image{
-		padding: 1rem;
-		margin: 0;
-		display: flex;
-		align-items: center;
+	
 
-		img{
-			width: 100%;
+	.list {
+		display: none;
+		width: 70%;
+		margin: 0 auto;
+
+		.list-item:not(:first-child){
+			@extend .list-top-margin;
 		}
+		
+		.list-item-header{
+			@extend .table-header;
+			font-family: $article-font;
+			padding-top: 1.2rem;
+			padding-bottom: 1.2rem;
+			color: white;
+			font-weight: bold;
+			text-align: center;
+
+		}
+
+		.list-item-image {
+			margin: 0;
+			padding: 0;
+			border: 2px solid $li-mi-gray;
+
+			img {
+				width: 100%;
+				border-bottom: 2px solid $li-mi-gray;
+			}
+		}
+
+		.list-item-description{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			font-size: $side-font-size + 0.5;		
+			text-align: center;
+
+			[class*="list-item"]{
+				flex-grow: 1;
+				padding-top: 1.2rem;
+				padding-bottom: 1.2rem;
+				font-family: $article-font;
+			}
+
+			.list-item-name{		
+				flex-basis: 100%;
+				border-bottom: 2px solid $li-mi-gray;
+			}
+
+			.list-item-quantity{
+				flex-basis: 50%;
+				border-right: 2px solid $li-mi-gray;
+			}
+
+			.list-item-price{
+				flex-basis: 50%;
+			}
+		}
+
+		/* designing address list */
+		.list-address{
+
+			@extend .list-top-margin;
+
+			.list-address-description{
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				font-size: $side-font-size + 0.5;		
+				text-align: center;
+				border: 2px solid $li-mi-gray;
+
+				[class*="list-address"]{
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-grow: 1;
+					padding-top: 1.2rem;
+					padding-bottom: 1.2rem;
+					font-family: $article-font;
+				}
+
+				.list-address-street{
+					flex-basis: 100%;
+					border-bottom: 2px solid $li-mi-gray;
+				}
+
+				.list-address-state{
+					flex-basis: 50%;
+					border-right: 2px solid $li-mi-gray;
+				}
+
+				.list-address-country{
+					flex-basis: 50%;
+				}
+			}
+
+		}
+		
+		.list-payment {
+			@extend .list-top-margin;
+			border: 2px solid $li-mi-gray;
+
+			.list-payment-item{
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				flex-wrap: nowrap;
+				text-align: center;
+
+				&:not(:last-child){
+					border-bottom: 2px solid $li-mi-gray;
+				}
+
+				div{
+					flex-basis: 50%;
+					font-size: $side-font-size + 0.5;	
+					padding-top: 1.2rem;
+					padding-bottom: 1.2rem;
+					font-family: $article-font;	
+
+					&:first-child{
+						border-right: 2px solid $li-mi-gray;
+
+					}
+				}
+			}
+		}
+
 	}
 
+	
+
+	.list-top-margin{
+		margin-top: 25px;
+	}
+
+	.table-background{
+		background-color: $light-gray;
+	}
+
+	.final-price {
+		font-size: 2.2rem;
+		font-weight: bold;
+	}
+
+}
+
+.small-image{
+	padding: 1rem;
+	margin: 0;
+	display: flex;
+	align-items: center;
+
+	img{
+		width: 100%;
+	}
+}
+
+/* Payment modal window */
+.vex-dialog-form{
+
+	input{
+		margin-top: 5px !important;
+		margin-bottom: 15px !important;
+	}
+
+	label{
+		font-weight: bold !important;
+	}
+
+	.error-field {
+		color: #64260B;
+		font-weight: bold;
+	}
+
+}
+
+@media only screen and (max-width:989px){
+	// make another one that fits smaller screens
+	#review-order{
+		.table {
+			display: none;
+		}
+
+		.list{
+			display: block;
+		}
+	}
+}
+
+@media only screen and (max-width:789px){
+	#review-order{
+		.list{
+			width: 95%;
+		}
+	}
 }

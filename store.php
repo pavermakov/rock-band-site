@@ -10,6 +10,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Cache-Control" content="no-cache">
 	<meta name="theme-color" content="#000000">
 	<title>Bobby Bubonic and the Plague</title>
 	<link href='https://fonts.googleapis.com/css?family=Hind' rel='stylesheet' type='text/css'>
@@ -53,7 +54,7 @@
 						<?php
 							if(isset($_SESSION["user_id"])) {
 								echo "
-									<li><a href='#'><i class='fa fa-user'></i> MY ACCOUNT</a></li>
+									<li class='drop-account'><a href='#'><i class='fa fa-user'></i> MY ACCOUNT</a></li>
 									<li class='drop-cart'><a href='#'><i class='fa fa-shopping-cart'></i> MY CART</a></li>
 									<li class='drop-sign-out'><a href='#'><i class='fa fa-sign-out'></i> SIGN OUT</a></li>
 								";
@@ -79,7 +80,7 @@
 
 							if(isset($_SESSION["user_id"])) {
 								echo "
-									<div class='control'>
+									<div class='control my-account'>
 										<p><i class='fa fa-user'></i>My Account</p>
 									</div>
 									<div class='control my-cart'>
@@ -162,6 +163,8 @@
 			
 		</main>
 
+		<div class="push"></div>
+
 		<footer id="page-footer">	
 			<div class="social-links side-content-wrapper">
 				<ul>
@@ -201,10 +204,12 @@
 		<script src="bower_components/growl/javascripts/jquery.growl.js"></script>
 		
 		<script src="js/script.js"></script>
+		<script src="js/utilities.js"></script>
 		<script src="js/store/sign-up.js"></script>
 		<script src="js/store/sign-in.js"></script>
 		<script src="js/store/sign-out.js"></script>	
 		<script src="js/store/store-view.js"></script>
+		<script src="js/store/account.js"></script>
 		<script src="js/store/store-action.js"></script>
 		<script src="js/store/view-product.js"></script>		
 		

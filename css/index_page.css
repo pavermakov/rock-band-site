@@ -403,18 +403,21 @@ article.post {
   font-size: 2.5rem;
   color: #909090; }
 
-.loader:before,
-.loader:after,
-.loader {
+/* This is just so wrong */
+/* Whoever is looking at it, please forgive me */
+.gray-loader .loader:before,
+.gray-loader .loader:after,
+.gray-loader .loader {
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  animation: load7 1.8s infinite ease-in-out;
   -webkit-animation: load7 1.8s infinite ease-in-out;
   animation: load7 1.8s infinite ease-in-out; }
 
-.loader {
+.gray-loader .loader {
   font-size: 10px;
   margin: 0 auto;
   position: relative;
@@ -425,16 +428,16 @@ article.post {
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s; }
 
-.loader:before {
+.gray-loader .loader:before {
   left: -3.5em;
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s; }
 
-.loader:after {
+.gray-loader .loader:after {
   left: 3.5em; }
 
-.loader:before,
-.loader:after {
+.gray-loader .loader:before,
+.gray-loader .loader:after {
   content: '';
   position: absolute;
   top: 0; }
@@ -454,3 +457,56 @@ article.post {
     box-shadow: 0 2.5em 0 -1.3em #909090; }
   40% {
     box-shadow: 0 2.5em 0 0 #909090; } }
+
+.white-loader .loader:before,
+.white-loader .loader:after,
+.white-loader .loader {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation: load8 1.8s infinite ease-in-out;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load8 1.8s infinite ease-in-out; }
+
+.white-loader .loader {
+  font-size: 10px;
+  margin: 0 auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s; }
+
+.white-loader .loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s; }
+
+.white-loader .loader:after {
+  left: 3.5em; }
+
+.white-loader .loader:before,
+.white-loader .loader:after {
+  content: '';
+  position: absolute;
+  top: 0; }
+
+@-webkit-keyframes load8 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em #fff; }
+  40% {
+    box-shadow: 0 2.5em 0 0 #fff; } }
+
+@keyframes load8 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em #fff; }
+  40% {
+    box-shadow: 0 2.5em 0 0 #fff; } }

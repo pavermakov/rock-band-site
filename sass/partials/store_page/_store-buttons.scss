@@ -9,6 +9,7 @@
 		letter-spacing: 1.5px;
 	}
 
+	
 	.cart-btn {
 		font-size: 1.8rem;
 		
@@ -24,6 +25,10 @@
 			cursor: pointer;
 			border-color: #5b5b5b;
 		}
+
+		
+
+		 
 	}
 
 	.cart-btn-left {
@@ -48,8 +53,20 @@
 	}
 }
 
+.vex {
+	button {
+		height: 40px;
+	}
+}
+
+button [class*="loader"]{
+	font-size: 5px !important;
+	top: -10px;
+}
+
 button:disabled{
 	opacity: 80%;
+	cursor: not-allowed;
 }
 
 @media only screen and (max-width:550px){

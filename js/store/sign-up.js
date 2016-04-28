@@ -1,4 +1,4 @@
-var Sign_up = (function(){
+var Sign_up = (function(Utilities){
 
 	var _inputs = {
 		email: "<input name='email' type='email' placeholder='E-mail' />",
@@ -86,12 +86,11 @@ var Sign_up = (function(){
 	      				$('.store-controls').load('store.php .controls');
 	      				$('.drop-controls-wrapper').load('store.php .drop-controls');
 
-	      				$.growl({ 
-									title: "<i class='fa fa-sign-in'></i> Signing in", 
-									message: "Welcome!",
-									location: 'br',
-									size: 'large'
-								});
+	      				Utilities.notify(
+	      					"<i class='fa fa-sign-in'></i> Signing in",
+	      					"Welcome!"
+	      				);
+
 	        		});
 
 	        		if(callback){
@@ -124,6 +123,6 @@ var Sign_up = (function(){
 		init: addEventListeners
 	}
 
-}());
+}(Utilities));
 
 Sign_up.init();

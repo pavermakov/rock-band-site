@@ -1,4 +1,4 @@
-var Store_Action = (function(Store_View){
+var Store_Action = (function(Store_View, Utilities){
 
 	var _productProperties;
 	var _userInfo = {};
@@ -136,7 +136,7 @@ var Store_Action = (function(Store_View){
 
 	}
 
-	function _submitAddressForm(){
+	function _submitAddressForm(event){
 		// I use ajax to submit the shipping form to
 		// the server
 
@@ -178,7 +178,16 @@ var Store_Action = (function(Store_View){
 		function __handleUserUpdate(data){
 			if(data.success){
 				// load review screen
-				Store_View.loadReview();
+				// or update show the notification
+				if($('#account').html()){
+					Utilities.notify(
+						'<i class="fa fa-check" aria-hidden="true"></i> Success', 
+						'User information was successfully updated!'
+					);
+				} else {
+					Store_View.loadReview();
+				}
+				
 			}
 		}
 
@@ -231,12 +240,10 @@ var Store_Action = (function(Store_View){
 
 		_getItem(props.amount);
 
-		$.growl({ 
-			title: "<i class='fa fa-shopping-cart'></i> New " + _getItem(props.amount) + " added", 
-			message: props.amount + " x " + _getFullSize(props.size) + " " + props.name,
-			location: 'br',
-			size: 'large'
-		});
+		Utilities.notify(
+			"<i class='fa fa-shopping-cart'></i> New " + _getItem(props.amount) + " added",
+			props.amount + " x " + _getFullSize(props.size) + " " + props.name
+		);
 	}
 
 	function _getProductProperties() {
@@ -270,6 +277,7 @@ var Store_Action = (function(Store_View){
 	function addEventListenersToCart() {	
 		var $main_wrapper = $('#main-wrapper');
 		$main_wrapper.on('click', '#remove-item', _removeFromCart);
+		$main_wrapper.on('click', '.btn-update-user', {callback: 'true'}, _submitAddressForm);
 		$main_wrapper.on('click', '.btn-review-order', _submitAddressForm);
 		$main_wrapper.on('submit', '.shipping-form', _preventFromSubmitting);
 	}
@@ -283,7 +291,7 @@ var Store_Action = (function(Store_View){
 		init: addEventListeners,
 		listen: addEventListenersToCart
 	}
-}(Store_View));
+}(Store_View, Utilities));
 
 Store_Action.listen();
 

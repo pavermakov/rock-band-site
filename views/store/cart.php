@@ -1,5 +1,4 @@
 <?php
-	
 	require_once("../../php_scripts/db/get_cart_orders.php");
 ?>
 

@@ -11,6 +11,10 @@ $(function(){
 
 		function _addEventListeners(){
 			$('#nav-toggle-box').click(_expandMenu);
+			// No jumping back to the previously scrolled position
+      $(window).on('beforeunload', function() {
+        $(window).scrollTop(0);
+      });
 		}
 
 		function _expandMenu(){

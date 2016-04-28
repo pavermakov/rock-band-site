@@ -1,4 +1,4 @@
-var Payment = (function(Store_View){
+var Payment = (function(Store_View, Utilities){
 
 	var _inputs = {
 		errors: '<div class="error-field"></div>',
@@ -9,15 +9,6 @@ var Payment = (function(Store_View){
 		expiration_label: '<label for="expiration_date">Expiration (MM/YYYY)</label>',
 		expiration_date: '<input id="expiration_date" type="text" size="2" placeholder="e.g 01 / 2017" data-stripe="exp-month">'
 	};
-
-	// var _validationObj = {
-	// 	rules: {
-	// 		payment_card: {
-	// 			required: true,
-	// 			my_card: true
-	// 		}
-	// 	}
-	// };
 
 	function _openPaymentForm() {
 
@@ -55,6 +46,7 @@ var Payment = (function(Store_View){
 	}
 
 	function _listenForSubmition(){
+		var $submit = $('button[type="submit"]');
 		// I want to catch the submition of this button only!
 		$('.vex-dialog-form').attr('id', 'payment-form');
 
@@ -66,8 +58,13 @@ var Payment = (function(Store_View){
 
 	    if(validation_result.errors.length === 0){
 	    	// clear errors if were any
-	    	$('.error-field').html('');
+	    	Utilities
+	    		.empty($('.error-field'))
+	    		.loading($submit, "white")
+	    		.disable($submit);
+
 	    	Stripe.card.createToken(validation_result.data, _stripeResponseHandler);
+
 			} else {
 				// show card errors
 				_displayErrors(validation_result.errors);
@@ -78,11 +75,14 @@ var Payment = (function(Store_View){
 	function _stripeResponseHandler(status, response){
 		// following the tutorial for Stripe.js
 		var $form = $('#payment-form');
+		var $submit = $('button[type="submit"]');
 
 		if (response.error) {
 	    // Show the errors on the form
+	    $submit.html('Pay');
+	    Utilities.enable($submit);
 	    _displayErrors(response.error.message);
-	    // $('.error-field').append("<p>" + response.error.message + "</p>");
+
 	  } else {
 	    // response contains id and card, which contains additional card details
 	    var token = {
@@ -111,9 +111,9 @@ var Payment = (function(Store_View){
 			// changing order status:
 			_updateOrder();
 			_closeVex();
-			_showNotification(
+			Utilities.notify(
 				'<i class="fa fa-check" aria-hidden="true"></i> Success', 
-				'We have received your payment!'
+				'Thank you for your purchase!'
 			);
 		}
 
@@ -137,7 +137,7 @@ var Payment = (function(Store_View){
 				// 'in cart' => 'paid'
 				Store_View.loadStore();
 			} else {
-				_showNotification(
+				Utilities.notify(
 					'<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error', 
 					'Failed to update database'
 				);
@@ -187,20 +187,6 @@ var Payment = (function(Store_View){
 		return validation;
 	}
 
-	function _showNotification(title, message, location, size){
-		_title = title || 'Growl title';
-		_message = message || 'Growl message',
-		_location = location || 'bl',
-		_size = size || 'large';
-
-		$.growl({
-			title: _title,
-			message: _message,
-			location: _location,
-			size: _size
-		});
-	}
-
 	function _displayErrors(errors){
 		// give it an array of errors and it will
 		// display them on the screen
@@ -233,6 +219,6 @@ var Payment = (function(Store_View){
 		init: addEventListeners
 	}
 
-}(Store_View));
+}(Store_View, Utilities));
 
 Payment.init();

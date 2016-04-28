@@ -175,25 +175,26 @@ var View_product = (function(){
 			buildButtons: function() {
 				var buttonContainer = document.createElement('div');
 
-				function buildOrderButton() {
-					var orderButton = document.createElement('button');
+				function buildBackButton() {
+					var backButton = document.createElement('button');
 
-					$(orderButton)
-						.addClass('order-button vex-dialog-button-primary vex-dialog-button')
+					$(backButton)
+						.addClass('vex-dialog-button-secondary vex-dialog-button vex-last')
 						.attr('type', 'button')
-						.html('buy now');
+						.html('back');
 
-					// add event listeners for this button
-					//Buy_now.init($(orderButton));
+					$(backButton).click(function(){
+						vex.close();
+					});
 
-					return $(orderButton);
+					return $(backButton);
 				}
 
 				function buildAddToCartButton() {
 					var cart = document.createElement('button');
 
 					$(cart)
-						.addClass('cart-button vex-dialog-button-secondary vex-dialog-button')
+						.addClass('cart-button vex-dialog-button-primary vex-dialog-button')
 						.attr('type', 'button')
 						.html('add to cart');
 
@@ -206,8 +207,8 @@ var View_product = (function(){
 
 				$(buttonContainer)
 					.addClass('button-container')
-					.append(buildAddToCartButton())
-					.append(buildOrderButton());
+					.append(buildBackButton())
+					.append(buildAddToCartButton());
 
 
 
@@ -245,7 +246,7 @@ var View_product = (function(){
 
 		vex.open({
 			content: _productProperties.buildModal(),
-			showCloseButton: true,
+			showCloseButton: false,
 			overlayClosesOnClick: true,
 			afterOpen: changeModalSetting,
 			afterClose: changeDialogState
