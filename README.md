@@ -51,3 +51,39 @@ I used quite a lot of technologies, however, I did not for help from any of the 
 This page contains a timeline that comes directly from the band's Facebook page.
 
 ![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/Capture1.PNG "Feed Page")
+
+***
+
+![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/Capture2.PNG "Feed Page")
+
+I used the [Transparency](http://leonidas.github.io/transparency/) template engine to render the posts on the page.
+
+# Music Page
+
+This page contains a player that comes from Soundcloud.
+
+![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/Capture3.PNG "Music Page")
+
+# About Page
+
+This is a static page that show the images of the band members.
+
+![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/Capture4.PNG "About Page")
+
+# Store Page
+
+This is a merchandise store. User can log in / register and purchase items. The payment is process through Stripe API.
+
+![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/Capture5.PNG "Store Page")
+
+***
+
+![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/Capture6.PNG "About Page")
+
+***
+
+![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/Capture7.PNG "Store Page")
+
+***
+
+![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/Capture8.PNG "Store Page")
