@@ -6,6 +6,8 @@ I have chosen to develop a website for this particular band, because I personall
 
 # Technologies
 
+I used quite a lot of technologies, however, I did not for help from any of the heavy-duty frameworks.
+
 ## Front-end
  - HTML5
  - CSS3
@@ -27,11 +29,15 @@ I have chosen to develop a website for this particular band, because I personall
  - PHP
    - Medoo
  - MySQL
+
 ## Third-party APIs
+
  - Facebook
  - Soundcloud
  - Stripe
+
 ## Other
+
  - Npm
  - Bower
  - Gulp
@@ -41,3 +47,7 @@ I have chosen to develop a website for this particular band, because I personall
    - Browser-sync
 
 # Home / Feed Page
+
+This page contains a timeline that comes directly from the band's Facebook page.
+
+![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/images/Capture1.PNG "Feed Page")
