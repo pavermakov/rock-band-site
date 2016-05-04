@@ -21,7 +21,9 @@ I have chosen to develop a website for this particular band, because I personall
    - Growl
    - Payment
  - Sass
+ 
 ## Back-end
+
  - PHP
    - Medoo
  - MySQL
