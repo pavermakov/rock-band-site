@@ -50,4 +50,4 @@ I used quite a lot of technologies, however, I did not for help from any of the 
 
 This page contains a timeline that comes directly from the band's Facebook page.
 
-![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/images/Capture1.PNG "Feed Page")
+![alt text](https://github.com/pavermakov/rock-band-site/raw/master/img/screenshots/Capture1.PNG "Feed Page")
